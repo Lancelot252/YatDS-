@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="YatOL 人机协作课程学生讲义" />
+    <title>YatOL 人机协作课程讲义</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#article">跳到正文</a>
+
+    <header class="topbar">
+      <button class="icon-button menu-button" id="menuButton" type="button" aria-label="收起目录" aria-expanded="true">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      </button>
+      <button class="brand" id="homeButton" type="button" aria-label="返回讲义总览">
+        <span class="brand-mark">YatOL</span>
+        <span class="brand-title">人机协作课程讲义</span>
+      </button>
+      <button class="search-trigger" id="searchButton" type="button">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
+        <span>搜索讲义…</span>
+        <kbd>⌘ K</kbd>
+      </button>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="讲义目录">
+        <nav class="chapter-nav" id="chapterNav"></nav>
+        <button class="overview-button" id="overviewButton" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg>
+          讲义总览
+        </button>
+      </aside>
+
+      <button class="sidebar-scrim" id="sidebarScrim" type="button" tabindex="-1" aria-label="关闭目录"></button>
+
+      <main class="reader">
+        <article class="article" id="article" tabindex="-1"></article>
+      </main>
+
+      <aside class="page-rail" id="pageRail" aria-label="本页目录"></aside>
+    </div>
+
+    <footer class="pager" id="pager"></footer>
+
+    <dialog class="search-dialog" id="searchDialog">
+      <form method="dialog" class="search-panel">
+        <div class="search-field">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
+          <input id="searchInput" type="search" placeholder="搜索标题或讲义内容" autocomplete="off" />
+          <button class="close-search" value="cancel" aria-label="关闭搜索">Esc</button>
+        </div>
+        <div class="search-results" id="searchResults" aria-live="polite"></div>
+      </form>
+    </dialog>
+
+    <script src="./content.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
