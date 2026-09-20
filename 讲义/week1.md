@@ -422,6 +422,10 @@ DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]
 
 ![YatCC-OL 主页面右侧的操作指引入口，红色箭头标出了按钮位置](figs/指引位置.png "YatCC-OL 操作指引入口")
 
+容器初次启动时，会出现长时间无法显示界面的情况，耐心等待和刷新即可(真的非常非常久哦)。
+
+2000 years later……
+
 进入容器后，页面与~~微软大战代码~~Microsoft VS Code 类似，熟悉 VS Code 的同学应该可以很快上手操作。
 
 ![YatCC-OL 容器内 VS Code 界面，左侧是文件浏览器，右侧是代码编辑区](figs/容器初始页面.png "YatCC-OL 容器内 VS Code 界面")
