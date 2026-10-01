@@ -1,0 +1,609 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e4]:
+    - link "Skip to main content" [ref=f5e5] [cursor=pointer]:
+      - /url: "#main-content"
+    - generic [ref=f5e6]:
+      - generic [ref=f5e9]:
+        - button "Close" [ref=f5e10] [cursor=pointer]
+        - paragraph [ref=f5e13]:
+          - text: This article is also available in
+          - link "Simplified Chinese" [ref=f5e14] [cursor=pointer]:
+            - /url: /zh/copilot/reference/custom-instructions-support
+          - text: .
+      - generic [ref=f5e16]:
+        - link "Skip to content" [ref=f5e17] [cursor=pointer]:
+          - /url: "#main-content"
+        - banner "Main" [ref=f5e20]:
+          - generic [ref=f5e21]:
+            - navigation "Header logo and title" [ref=f5e22]:
+              - list [ref=f5e23]:
+                - listitem [ref=f5e24]:
+                  - link "Github Home" [ref=f5e25] [cursor=pointer]:
+                    - /url: /en
+                - listitem [ref=f5e31]:
+                  - link "Docs home" [ref=f5e32] [cursor=pointer]:
+                    - /url: /en
+                    - generic [ref=f5e33]: GitHub Docs
+            - generic [ref=f5e35]:
+              - generic [ref=f5e36]: "Select your plan:"
+              - 'button "Select your plan: Free, Pro, & Team" [ref=f5e38] [cursor=pointer]':
+                - generic [ref=f5e39]: Free, Pro, & Team
+            - generic [ref=f5e46]:
+              - button "Search or ask Copilot" [ref=f5e48] [cursor=pointer]:
+                - generic [ref=f5e53]: /
+              - 'button "Select language: current language is English" [ref=f5e57] [cursor=pointer]':
+                - generic [ref=f5e61]: English
+    - generic [ref=f5e68]:
+      - generic [ref=f5e70]:
+        - button "Collapse sidebar" [expanded] [ref=f5e72] [cursor=pointer]
+        - navigation "Breadcrumb" [ref=f5e78]:
+          - list [ref=f5e79]:
+            - listitem [ref=f5e80]:
+              - link "Home" [ref=f5e81] [cursor=pointer]:
+                - /url: /en
+            - listitem [ref=f5e82]:
+              - link "GitHub Copilot" [ref=f5e83] [cursor=pointer]:
+                - /url: /en/copilot
+            - listitem [ref=f5e84]:
+              - link "Reference" [ref=f5e85] [cursor=pointer]:
+                - /url: /en/copilot/reference
+            - listitem [ref=f5e86]:
+              - generic "Custom instructions support"
+      - generic [ref=f5e87]:
+        - navigation [ref=f5e89]:
+          - heading [level=2] [ref=f5e91]:
+            - link "GitHub Copilot" [ref=f5e92] [cursor=pointer]:
+              - /url: /en/copilot
+          - region "Page navigation content" [ref=f5e93]:
+            - navigation "Product sidebar" [ref=f5e96]:
+              - list [ref=f5e97]:
+                - listitem [ref=f5e98]:
+                  - button "Get started" [ref=f5e100] [cursor=pointer]
+                - listitem [ref=f5e105]:
+                  - button "Concepts" [ref=f5e107] [cursor=pointer]
+                - listitem [ref=f5e112]:
+                  - button "How-tos" [ref=f5e114] [cursor=pointer]
+                - listitem [ref=f5e119]:
+                  - button "Reference" [expanded] [ref=f5e121] [cursor=pointer]
+                  - list "Reference" [ref=f5e126]:
+                    - listitem [ref=f5e127]:
+                      - link "Chat cheat sheet" [ref=f5e129] [cursor=pointer]:
+                        - /url: /en/copilot/reference/chat-cheat-sheet
+                    - listitem [ref=f5e132]:
+                      - link "Customization cheat sheet" [ref=f5e134] [cursor=pointer]:
+                        - /url: /en/copilot/reference/customization-cheat-sheet
+                    - listitem [ref=f5e137]:
+                      - button "AI models" [ref=f5e139] [cursor=pointer]
+                    - listitem [ref=f5e144]:
+                      - link "Copilot feature matrix" [ref=f5e146] [cursor=pointer]:
+                        - /url: /en/copilot/reference/copilot-feature-matrix
+                    - listitem [ref=f5e149]:
+                      - link "Keyboard shortcuts" [ref=f5e151] [cursor=pointer]:
+                        - /url: /en/copilot/reference/keyboard-shortcuts
+                    - listitem [ref=f5e154]:
+                      - button "Copilot CLI reference" [ref=f5e156] [cursor=pointer]
+                    - listitem [ref=f5e161]:
+                      - button "GitHub Copilot app reference" [ref=f5e163] [cursor=pointer]
+                    - listitem [ref=f5e168]:
+                      - link "Custom agents configuration" [ref=f5e170] [cursor=pointer]:
+                        - /url: /en/copilot/reference/custom-agents-configuration
+                    - listitem [ref=f5e173]:
+                      - link "Custom instructions support" [ref=f5e175] [cursor=pointer]:
+                        - /url: /en/copilot/reference/custom-instructions-support
+                    - listitem [ref=f5e178]:
+                      - link "Hooks reference" [ref=f5e180] [cursor=pointer]:
+                        - /url: /en/copilot/reference/hooks-reference
+                    - listitem [ref=f5e183]:
+                      - link "Supported surfaces for policies" [ref=f5e185] [cursor=pointer]:
+                        - /url: /en/copilot/reference/supported-surfaces-for-policies
+                    - listitem [ref=f5e188]:
+                      - link "Copilot allowlist reference" [ref=f5e190] [cursor=pointer]:
+                        - /url: /en/copilot/reference/copilot-allowlist-reference
+                    - listitem [ref=f5e193]:
+                      - link "Metrics data" [ref=f5e195] [cursor=pointer]:
+                        - /url: /en/copilot/reference/metrics-data
+                    - listitem [ref=f5e198]:
+                      - button "Copilot billing" [ref=f5e200] [cursor=pointer]
+                    - listitem [ref=f5e205]:
+                      - link "Review excluded files" [ref=f5e207] [cursor=pointer]:
+                        - /url: /en/copilot/reference/review-excluded-files
+                    - listitem [ref=f5e210]:
+                      - button "Copilot usage metrics" [ref=f5e212] [cursor=pointer]
+                    - listitem [ref=f5e217]:
+                      - button "Enterprise administrators" [ref=f5e219] [cursor=pointer]
+                - listitem [ref=f5e224]:
+                  - button "Tutorials" [ref=f5e226] [cursor=pointer]
+                - listitem [ref=f5e231]:
+                  - button "Responsible use" [ref=f5e233] [cursor=pointer]
+        - generic [ref=f5e238]:
+          - main [ref=f5e239]:
+            - button "In this article" [ref=f5e242] [cursor=pointer]
+            - generic [ref=f5e247]:
+              - heading "Support for different types of custom instructions" [level=1] [ref=f5e250]
+              - generic [ref=f5e251]:
+                - paragraph [ref=f5e253]: Find out which environments support which types of custom instructions.
+                - generic [ref=f5e255]:
+                  - button "Copy markdown" [ref=f5e256] [cursor=pointer]
+                  - button "More Markdown options" [ref=f5e258] [cursor=pointer]
+              - generic [ref=f5e263]:
+                - paragraph [ref=f5e264]:
+                  - text: This reference article provides details of which types of custom instructions are supported in various environments. For more information about the various types of custom instructions for GitHub Copilot, see
+                  - link "About customizing GitHub Copilot responses" [ref=f5e265] [cursor=pointer]:
+                    - /url: /en/copilot/concepts/prompting/response-customization
+                  - text: .
+                - heading [level=2] [ref=f5e266]:
+                  - link "GitHub.com" [ref=f5e267] [cursor=pointer]:
+                    - /url: "#githubcom"
+                - table "GitHub.com" [ref=f5e269]:
+                  - rowgroup [ref=f5e270]:
+                    - row [ref=f5e271]:
+                      - columnheader "Copilot feature" [ref=f5e272]
+                      - columnheader "Types of custom instructions supported" [ref=f5e273]
+                  - rowgroup [ref=f5e274]:
+                    - row [ref=f5e275]:
+                      - cell "Copilot Chat" [ref=f5e276]
+                      - cell [ref=f5e277]:
+                        - list [ref=f5e278]:
+                          - listitem [ref=f5e279]:
+                            - text: 👤
+                            - strong [ref=f5e280]: Personal
+                            - text: instructions.
+                          - listitem [ref=f5e281]:
+                            - text: 📦
+                            - strong [ref=f5e282]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e283]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e284]:
+                            - text: 🏢
+                            - strong [ref=f5e285]: Organization
+                            - text: instructions.
+                    - row [ref=f5e286]:
+                      - cell "Copilot cloud agent" [ref=f5e287]
+                      - cell [ref=f5e288]:
+                        - list [ref=f5e289]:
+                          - listitem [ref=f5e290]:
+                            - text: 📦
+                            - strong [ref=f5e291]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e292]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e293]:
+                            - text: 📂
+                            - strong [ref=f5e294]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e295]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e296]:
+                            - text: 🤖
+                            - strong [ref=f5e297]: Agent
+                            - text: instructions (using
+                            - code [ref=f5e298]: AGENTS.md
+                            - text: ","
+                            - code [ref=f5e299]: CLAUDE.md
+                            - text: or
+                            - code [ref=f5e300]: GEMINI.md
+                            - text: files).
+                          - listitem [ref=f5e301]:
+                            - text: 🏢
+                            - strong [ref=f5e302]: Organization
+                            - text: instructions.
+                    - row [ref=f5e303]:
+                      - cell "Copilot code review" [ref=f5e304]
+                      - cell [ref=f5e305]:
+                        - list [ref=f5e306]:
+                          - listitem [ref=f5e307]:
+                            - text: 📦
+                            - strong [ref=f5e308]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e309]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e310]:
+                            - text: 📂
+                            - strong [ref=f5e311]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e312]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e313]:
+                            - text: 🤖
+                            - strong [ref=f5e314]: Agent
+                            - text: instructions (using an
+                            - code [ref=f5e315]: AGENTS.md
+                            - text: file).
+                          - listitem [ref=f5e316]:
+                            - text: 🏢
+                            - strong [ref=f5e317]: Organization
+                            - text: instructions.
+                - heading [level=2] [ref=f5e318]:
+                  - link "Visual Studio Code" [ref=f5e319] [cursor=pointer]:
+                    - /url: "#visual-studio-code"
+                - table "Visual Studio Code" [ref=f5e321]:
+                  - rowgroup [ref=f5e322]:
+                    - row [ref=f5e323]:
+                      - columnheader "Copilot feature" [ref=f5e324]
+                      - columnheader "Types of custom instructions supported" [ref=f5e325]
+                  - rowgroup [ref=f5e326]:
+                    - row [ref=f5e327]:
+                      - cell "Copilot Chat" [ref=f5e328]
+                      - cell [ref=f5e329]:
+                        - list [ref=f5e330]:
+                          - listitem [ref=f5e331]:
+                            - text: 📦
+                            - strong [ref=f5e332]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e333]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e334]:
+                            - text: 📂
+                            - strong [ref=f5e335]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e336]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e337]:
+                            - text: 🤖
+                            - strong [ref=f5e338]: Agent
+                            - text: instructions (using an
+                            - code [ref=f5e339]: AGENTS.md
+                            - text: file).
+                    - row [ref=f5e340]:
+                      - cell "Copilot cloud agent" [ref=f5e341]
+                      - cell [ref=f5e342]:
+                        - list [ref=f5e343]:
+                          - listitem [ref=f5e344]:
+                            - text: 📦
+                            - strong [ref=f5e345]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e346]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e347]:
+                            - text: 📂
+                            - strong [ref=f5e348]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e349]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e350]:
+                            - text: 🤖
+                            - strong [ref=f5e351]: Agent
+                            - text: instructions (using
+                            - code [ref=f5e352]: AGENTS.md
+                            - text: ","
+                            - code [ref=f5e353]: CLAUDE.md
+                            - text: or
+                            - code [ref=f5e354]: GEMINI.md
+                            - text: files).
+                    - row [ref=f5e355]:
+                      - cell "Copilot code review" [ref=f5e356]
+                      - cell [ref=f5e357]:
+                        - list [ref=f5e358]:
+                          - listitem [ref=f5e359]:
+                            - text: 📦
+                            - strong [ref=f5e360]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e361]: .github/copilot-instructions.md
+                            - text: file).
+                - heading [level=2] [ref=f5e362]:
+                  - link "Visual Studio" [ref=f5e363] [cursor=pointer]:
+                    - /url: "#visual-studio"
+                - table "Visual Studio" [ref=f5e365]:
+                  - rowgroup [ref=f5e366]:
+                    - row [ref=f5e367]:
+                      - columnheader "Copilot feature" [ref=f5e368]
+                      - columnheader "Types of custom instructions supported" [ref=f5e369]
+                  - rowgroup [ref=f5e370]:
+                    - row [ref=f5e371]:
+                      - cell "Copilot Chat" [ref=f5e372]
+                      - cell [ref=f5e373]:
+                        - list [ref=f5e374]:
+                          - listitem [ref=f5e375]:
+                            - text: 📦
+                            - strong [ref=f5e376]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e377]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e378]:
+                            - text: 📂
+                            - strong [ref=f5e379]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e380]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                    - row [ref=f5e381]:
+                      - cell "Copilot code review" [ref=f5e382]
+                      - cell [ref=f5e383]:
+                        - list [ref=f5e384]:
+                          - listitem [ref=f5e385]:
+                            - text: 📦
+                            - strong [ref=f5e386]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e387]: .github/copilot-instructions.md
+                            - text: file).
+                - heading [level=2] [ref=f5e388]:
+                  - link "JetBrains IDEs" [ref=f5e389] [cursor=pointer]:
+                    - /url: "#jetbrains-ides"
+                - paragraph [ref=f5e391]:
+                  - text: In JetBrains IDEs, you can manage supported customizations from the Agent Customizations editor. In the GitHub Copilot Chat panel, click the settings icon in the top-right, then click
+                  - strong [ref=f5e392]: Customizations
+                  - text: .
+                - paragraph [ref=f5e393]:
+                  - text: The editor lets you work with workspace customizations for the current project or personal customizations that follow you across projects. You can use it to view and edit custom agents, manage reusable skills and prompt files, and configure instructions. For more information, see
+                  - link "Adding repository custom instructions for GitHub Copilot in your IDE" [ref=f5e394] [cursor=pointer]:
+                    - /url: /en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide
+                  - text: and
+                  - link "Creating custom agents for Copilot cloud agent in your IDE" [ref=f5e395] [cursor=pointer]:
+                    - /url: /en/copilot/how-tos/use-copilot-agents/cloud-agent/create-custom-agents-in-your-ide
+                  - text: .
+                - table "JetBrains IDEs" [ref=f5e396]:
+                  - rowgroup [ref=f5e397]:
+                    - row [ref=f5e398]:
+                      - columnheader "Copilot feature" [ref=f5e399]
+                      - columnheader "Types of custom instructions supported" [ref=f5e400]
+                  - rowgroup [ref=f5e401]:
+                    - row [ref=f5e402]:
+                      - cell "Copilot Chat" [ref=f5e403]
+                      - cell [ref=f5e404]:
+                        - list [ref=f5e405]:
+                          - listitem [ref=f5e406]:
+                            - text: 👤
+                            - strong [ref=f5e407]: Personal
+                            - text: instructions.
+                          - listitem [ref=f5e408]:
+                            - text: 📦
+                            - strong [ref=f5e409]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e410]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e411]:
+                            - text: 📂
+                            - strong [ref=f5e412]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e413]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                    - row [ref=f5e414]:
+                      - cell "Copilot cloud agent" [ref=f5e415]
+                      - cell [ref=f5e416]:
+                        - list [ref=f5e417]:
+                          - listitem [ref=f5e418]:
+                            - text: 📦
+                            - strong [ref=f5e419]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e420]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e421]:
+                            - text: 📂
+                            - strong [ref=f5e422]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e423]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e424]:
+                            - text: 🤖
+                            - strong [ref=f5e425]: Agent
+                            - text: instructions (using
+                            - code [ref=f5e426]: AGENTS.md
+                            - text: ","
+                            - code [ref=f5e427]: CLAUDE.md
+                            - text: or
+                            - code [ref=f5e428]: GEMINI.md
+                            - text: files).
+                    - row [ref=f5e429]:
+                      - cell "Copilot code review" [ref=f5e430]
+                      - cell [ref=f5e431]:
+                        - list [ref=f5e432]:
+                          - listitem [ref=f5e433]:
+                            - text: 📦
+                            - strong [ref=f5e434]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e435]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e436]:
+                            - text: 📂
+                            - strong [ref=f5e437]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e438]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                - heading [level=2] [ref=f5e439]:
+                  - link "Eclipse" [ref=f5e440] [cursor=pointer]:
+                    - /url: "#eclipse"
+                - table "Eclipse" [ref=f5e442]:
+                  - rowgroup [ref=f5e443]:
+                    - row [ref=f5e444]:
+                      - columnheader "Copilot feature" [ref=f5e445]
+                      - columnheader "Types of custom instructions supported" [ref=f5e446]
+                  - rowgroup [ref=f5e447]:
+                    - row [ref=f5e448]:
+                      - cell "Copilot Chat" [ref=f5e449]
+                      - cell [ref=f5e450]:
+                        - list [ref=f5e451]:
+                          - listitem [ref=f5e452]:
+                            - text: 📦
+                            - strong [ref=f5e453]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e454]: .github/copilot-instructions.md
+                            - text: file).
+                    - row [ref=f5e455]:
+                      - cell "Copilot cloud agent" [ref=f5e456]
+                      - cell [ref=f5e457]:
+                        - list [ref=f5e458]:
+                          - listitem [ref=f5e459]:
+                            - text: 📦
+                            - strong [ref=f5e460]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e461]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e462]:
+                            - text: 📂
+                            - strong [ref=f5e463]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e464]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e465]:
+                            - text: 🤖
+                            - strong [ref=f5e466]: Agent
+                            - text: instructions (using
+                            - code [ref=f5e467]: AGENTS.md
+                            - text: ","
+                            - code [ref=f5e468]: CLAUDE.md
+                            - text: or
+                            - code [ref=f5e469]: GEMINI.md
+                            - text: files).
+                    - row [ref=f5e470]:
+                      - cell "Copilot code review" [ref=f5e471]
+                      - cell [ref=f5e472]:
+                        - list [ref=f5e473]:
+                          - listitem [ref=f5e474]: Custom instructions are currently not supported.
+                - heading [level=2] [ref=f5e475]:
+                  - link "Xcode" [ref=f5e476] [cursor=pointer]:
+                    - /url: "#xcode"
+                - table "Xcode" [ref=f5e478]:
+                  - rowgroup [ref=f5e479]:
+                    - row [ref=f5e480]:
+                      - columnheader "Copilot feature" [ref=f5e481]
+                      - columnheader "Types of custom instructions supported" [ref=f5e482]
+                  - rowgroup [ref=f5e483]:
+                    - row [ref=f5e484]:
+                      - cell "Copilot Chat" [ref=f5e485]
+                      - cell [ref=f5e486]:
+                        - list [ref=f5e487]:
+                          - listitem [ref=f5e488]:
+                            - text: 📦
+                            - strong [ref=f5e489]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e490]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e491]:
+                            - text: 📂
+                            - strong [ref=f5e492]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e493]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                    - row [ref=f5e494]:
+                      - cell "Copilot cloud agent" [ref=f5e495]
+                      - cell [ref=f5e496]:
+                        - list [ref=f5e497]:
+                          - listitem [ref=f5e498]:
+                            - text: 📦
+                            - strong [ref=f5e499]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e500]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e501]:
+                            - text: 📂
+                            - strong [ref=f5e502]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e503]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                          - listitem [ref=f5e504]:
+                            - text: 🤖
+                            - strong [ref=f5e505]: Agent
+                            - text: instructions (using
+                            - code [ref=f5e506]: AGENTS.md
+                            - text: ","
+                            - code [ref=f5e507]: CLAUDE.md
+                            - text: or
+                            - code [ref=f5e508]: GEMINI.md
+                            - text: files).
+                    - row [ref=f5e509]:
+                      - cell "Copilot code review" [ref=f5e510]
+                      - cell [ref=f5e511]:
+                        - list [ref=f5e512]:
+                          - listitem [ref=f5e513]:
+                            - text: 📦
+                            - strong [ref=f5e514]: Repository-wide
+                            - text: instructions (using the
+                            - code [ref=f5e515]: .github/copilot-instructions.md
+                            - text: file).
+                          - listitem [ref=f5e516]:
+                            - text: 📂
+                            - strong [ref=f5e517]: Path-specific
+                            - text: instructions (using
+                            - code [ref=f5e518]: .github/instructions/**/*.instructions.md
+                            - text: files).
+                - heading [level=2] [ref=f5e519]:
+                  - link "Copilot CLI" [ref=f5e520] [cursor=pointer]:
+                    - /url: "#copilot-cli"
+                - list [ref=f5e522]:
+                  - listitem [ref=f5e523]:
+                    - text: 📦
+                    - strong [ref=f5e524]: Repository-wide
+                    - text: instructions (using the
+                    - code [ref=f5e525]: .github/copilot-instructions.md
+                    - text: file).
+                  - listitem [ref=f5e526]:
+                    - text: 📂
+                    - strong [ref=f5e527]: Path-specific
+                    - text: instructions (using
+                    - code [ref=f5e528]: .github/instructions/**/*.instructions.md
+                    - text: files).
+                  - listitem [ref=f5e529]:
+                    - text: 🤖
+                    - strong [ref=f5e530]: Agent
+                    - text: instructions (using
+                    - code [ref=f5e531]: AGENTS.md
+                    - text: ","
+                    - code [ref=f5e532]: CLAUDE.md
+                    - text: or
+                    - code [ref=f5e533]: GEMINI.md
+                    - text: files).
+                  - listitem [ref=f5e534]:
+                    - text: 👤
+                    - strong [ref=f5e535]: Personal
+                    - text: instructions (using
+                    - code [ref=f5e536]: ~/.copilot/copilot-instructions.md
+                    - text: or
+                    - code [ref=f5e537]: ~/.copilot/instructions/**/*.instructions.md
+                    - text: files).
+                - heading [level=2] [ref=f5e538]:
+                  - link "Further reading" [ref=f5e539] [cursor=pointer]:
+                    - /url: "#further-reading"
+                - list [ref=f5e541]:
+                  - listitem [ref=f5e542]:
+                    - link "Adding repository custom instructions for GitHub Copilot" [ref=f5e543] [cursor=pointer]:
+                      - /url: /en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions
+                  - listitem [ref=f5e544]:
+                    - link "Adding personal custom instructions for GitHub Copilot" [ref=f5e545] [cursor=pointer]:
+                      - /url: /en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-personal-instructions
+                  - listitem [ref=f5e546]:
+                    - link "Adding organization custom instructions for GitHub Copilot" [ref=f5e547] [cursor=pointer]:
+                      - /url: /en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-organization-instructions
+          - contentinfo [ref=f5e549]:
+            - generic [ref=f5e553]:
+              - link "GitHub" [ref=f5e554] [cursor=pointer]:
+                - /url: https://github.com
+              - button "Back to top" [ref=f5e558] [cursor=pointer]
+            - generic [ref=f5e566]:
+              - heading "Help and support" [level=2] [ref=f5e567]
+              - generic [ref=f5e568]:
+                - generic [ref=f5e570]:
+                  - heading "Was this Doc helpful?" [level=3] [ref=f5e571]
+                  - radiogroup "Was this Doc helpful?" [ref=f5e572]:
+                    - radio "Yes" [ref=f5e573]
+                    - generic [ref=f5e574] [cursor=pointer]: "Yes"
+                    - radio "No" [ref=f5e575]
+                    - generic [ref=f5e576] [cursor=pointer]: "No"
+                - generic [ref=f5e578]:
+                  - heading "Help us make GitHub Docs great!" [level=3] [ref=f5e579]
+                  - paragraph [ref=f5e580]: All Docs are open source. See something that's wrong or unclear? Submit a pull request.
+                  - link "Make a contribution" [ref=f5e581] [cursor=pointer]:
+                    - /url: https://github.com/github/docs/blob/main/content/copilot/reference/custom-instructions-support.md
+                - generic [ref=f5e583]:
+                  - heading "Still need help?" [level=3] [ref=f5e584]
+                  - generic [ref=f5e585]:
+                    - link "Ask the GitHub community" [ref=f5e586] [cursor=pointer]:
+                      - /url: https://github.com/orgs/community/discussions
+                    - link "Contact support" [ref=f5e587] [cursor=pointer]:
+                      - /url: https://support.github.com
+                    - link "Expert services" [ref=f5e588] [cursor=pointer]:
+                      - /url: https://services.github.com
+                    - link "Blog" [ref=f5e589] [cursor=pointer]:
+                      - /url: https://github.blog
+            - paragraph [ref=f5e594]:
+              - generic [ref=f5e595]:
+                - generic [ref=f5e596]: GitHub Inc. © 2026
+                - generic [ref=f5e597]:
+                  - link "Terms" [ref=f5e598] [cursor=pointer]:
+                    - /url: /en/site-policy/github-terms/github-terms-of-service
+                  - link "Privacy" [ref=f5e599] [cursor=pointer]:
+                    - /url: /en/site-policy/privacy-policies/github-privacy-statement
+                  - link "Status" [ref=f5e600] [cursor=pointer]:
+                    - /url: https://www.githubstatus.com/
+                  - link "Pricing" [ref=f5e601] [cursor=pointer]:
+                    - /url: https://github.com/pricing
+  - alert [ref=f5e602]

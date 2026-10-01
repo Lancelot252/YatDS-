@@ -20,6 +20,7 @@
 5. 生成并核对 Commit Message 与 Pull Request 说明。
 6. 输出包含严重程度、位置、触发条件、影响和修复方向的审查发现。
 7. 区分 revert[^9] 与历史改写，并理解人工合并责任。
+8. 根据需求、真实变更和验证证据评价 Agent 生成的代码与说明。
 
 [^1]: Diff 是两个版本之间新增、删除和修改内容的对比。
 [^2]: Branch 是从某个基线分出的独立开发线。
@@ -131,7 +132,13 @@ Branch 隔离开发；Agent 可根据真实 diff 生成 Commit Message，但人�
 
 权限变化必须同时检查管理员、普通用户和未登录用户；数据写入要检查失败后的状态；公共接口要检查旧调用者与返回结构。
 
-### 8. 高质量审查发现
+### 8. 评价 Agent 生成结果与审查发现
+
+教师先把评价对象说清楚：Agent 的交付包括修改后的代码、测试、配置以及最终说明。评价时不要先看回答是否流畅，而要把任务要求与实际结果逐项对应：必须改变的行为是否实现；原有行为是否保持；文件和依赖变化是否必要且完整；失败、边界与权限路径是否正确；测试和其他检查是否真实运行、覆盖目标；最终摘要是否忠实于 diff 和命令输出。
+
+以“普通用户不能访问 `/admin`”为例，教师先核对 `src/auth/guard.py` 的实际拒绝分支，再检查管理员和未登录路径、对应测试与输出。若测试只覆盖管理员，即使报告写“18 passed”，也只能说已运行的用例通过，不能说权限需求已经验证。若摘要声称只改了权限判断，而文件清单包含锁文件或 CI，应指出说明与实际变化不一致，并追查原因。
+
+教师把评价结论写成三部分：已有证据支持的结果、需要修复的具体问题、尚缺证据及其影响。此处评价的是 Agent 的交付质量，不对学生或工具打分。
 
 每条发现至少包含：
 
@@ -279,8 +286,8 @@ Agent 为一个简单日期格式引入大型库。审查应问现有标准库�
 4. 阅读新增测试，确认是否覆盖普通用户被拒绝、未登录用户和管理员成功。
 5. 检查配置、依赖和锁文件是否有非必要变化。
 6. 运行最相关测试和项目质量命令，保留真实输出。
-7. 让 Agent 生成审查发现，再与人工发现对照，删除没有证据的猜测。
-8. 按严重程度输出：阻塞合并、建议改进、未验证风险。
+7. 对照需求、文件清单、关键路径、测试输出和最终摘要，评价 Agent 实际交付；让 Agent 生成审查发现，再与人工发现对照，删除没有证据的猜测。
+8. 按严重程度输出：阻塞合并、建议改进、未验证风险，并说明哪些结果已有证据、哪些尚未验证。
 
 ### 审查意见示例
 
@@ -338,7 +345,7 @@ Agent 为一个简单日期格式引入大型库。审查应问现有标准库�
 
 ## 九、课堂总结与板书
 
-Agent 可以帮助导航 diff、解释调用关系和发现候选问题，但不能替代负责合并的人。高质量审查以真实 diff、可运行检查和需求边界为证据。
+Agent 可以帮助导航 diff、解释调用关系和发现候选问题，但不能替代负责合并的人。评价其生成结果时，要把需求、真实 diff、运行证据和最终说明相互核对。
 
 ### 板书设计
 
@@ -349,6 +356,7 @@ Agent 可以帮助导航 diff、解释调用关系和发现候选问题，但不
 摘要用于导航，diff 才是变更事实。
 共享历史优先 revert，谨慎 reset/force push。
 发现：严重度 | 位置 | 触发 | 影响 | 证据 | 修复方向
+结果评价：需求符合 | 范围完整 | 行为正确 | 验证可信 | 说明一致
 结论：可操作问题 | 未发现问题 + 剩余风险 | 证据不足
 ```
 
@@ -364,6 +372,8 @@ Agent 可以帮助导航 diff、解释调用关系和发现候选问题，但不
 
 ## 参考文献
 
+- [OpenAI Developers：Using Goals in Codex](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex)（访问日期：2026-09-23）
+- [GitHub Docs：Reviewing proposed changes in a pull request](https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request)（访问日期：2026-09-23）
 - [OpenAI Developers：Codex 可用于构建、测试并审查变更](https://developers.openai.com/)（访问日期：2026-08-11）
 - [GitHub Docs：About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review)（访问日期：2026-08-11）
 - [GitHub Docs：Requesting a code review with GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/agentic-code-review)（访问日期：2026-08-11）

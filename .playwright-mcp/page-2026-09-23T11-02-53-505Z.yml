@@ -1,0 +1,454 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - text: For the complete documentation index, see
+    - link "llms.txt" [ref=e3] [cursor=pointer]:
+      - /url: /llms.txt
+    - text: . Markdown versions of documentation pages are available by appending
+    - code [ref=e4]: .md
+    - text: to the page URL.
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "ChatGPT" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e12]:
+        - link "Try ChatGPT" [ref=e16] [cursor=pointer]:
+          - /url: https://chatgpt.com/
+        - button "Toggle light and dark theme" [ref=e21] [cursor=pointer]
+        - button "Search the docs" [ref=e24] [cursor=pointer]
+      - navigation [ref=e28]:
+        - link "Home" [ref=e30] [cursor=pointer]:
+          - /url: /
+        - link "Docs" [ref=e32] [cursor=pointer]:
+          - /url: /docs
+        - link "Use cases" [ref=e34] [cursor=pointer]:
+          - /url: /use-cases
+        - link "Training" [ref=e36] [cursor=pointer]:
+          - /url: /training
+        - link "Resources" [ref=e38] [cursor=pointer]:
+          - /url: /resources
+  - navigation "Docs sections" [ref=e40]:
+    - link "Overview" [ref=e41] [cursor=pointer]:
+      - /url: /docs
+    - link "Features" [ref=e43] [cursor=pointer]:
+      - /url: /docs/features
+    - link "Configuration" [ref=e45] [cursor=pointer]:
+      - /url: /docs/configuration
+    - link "Developers" [ref=e48] [cursor=pointer]:
+      - /url: /docs/developers
+    - link "Security" [ref=e50] [cursor=pointer]:
+      - /url: /docs/security-administration
+    - link "Administration" [ref=e52] [cursor=pointer]:
+      - /url: /docs/administration
+  - generic [ref=e55]:
+    - navigation [ref=e57]:
+      - list [ref=e59]:
+        - listitem [ref=e60]:
+          - link "Overview" [ref=e61] [cursor=pointer]:
+            - /url: /docs/configuration
+      - generic [ref=e63]:
+        - heading "Customization" [level=3] [ref=e64]
+        - list [ref=e65]:
+          - listitem [ref=e66]:
+            - link "Overview" [ref=e67] [cursor=pointer]:
+              - /url: /docs/customization/overview
+          - listitem [ref=e69]:
+            - link "Memories" [ref=e70] [cursor=pointer]:
+              - /url: /docs/customization/memories
+          - listitem [ref=e72]:
+            - link "Computer History" [ref=e73] [cursor=pointer]:
+              - /url: /docs/customization/computer-history
+      - generic [ref=e75]:
+        - heading "Config file" [level=3] [ref=e76]
+        - list [ref=e77]:
+          - listitem [ref=e78]:
+            - link "Config Basics" [ref=e79] [cursor=pointer]:
+              - /url: /docs/config-file/config-basic
+          - listitem [ref=e81]:
+            - link "Advanced Config" [ref=e82] [cursor=pointer]:
+              - /url: /docs/config-file/config-advanced
+          - listitem [ref=e84]:
+            - link "Config Reference" [ref=e85] [cursor=pointer]:
+              - /url: /docs/config-file/config-reference
+          - listitem [ref=e87]:
+            - link "Environment Variables" [ref=e88] [cursor=pointer]:
+              - /url: /docs/config-file/environment-variables
+          - listitem [ref=e90]:
+            - link "Sample Config" [ref=e91] [cursor=pointer]:
+              - /url: /docs/config-file/config-sample
+      - generic [ref=e93]:
+        - heading "Agent configuration" [level=3] [ref=e94]
+        - list [ref=e95]:
+          - listitem [ref=e96]:
+            - link "AGENTS.md" [ref=e97] [cursor=pointer]:
+              - /url: /docs/agent-configuration/agents-md
+          - listitem [ref=e99]:
+            - link "Subagents" [ref=e100] [cursor=pointer]:
+              - /url: /docs/agent-configuration/subagents
+          - listitem [ref=e102]:
+            - link "Speed" [ref=e103] [cursor=pointer]:
+              - /url: /docs/agent-configuration/speed
+          - listitem [ref=e105]:
+            - link "Rules" [ref=e106] [cursor=pointer]:
+              - /url: /docs/agent-configuration/rules
+      - generic [ref=e108]:
+        - heading "Extend ChatGPT and Codex" [level=3] [ref=e109]
+        - list [ref=e110]:
+          - listitem [ref=e111]:
+            - link "Record & Replay" [ref=e112] [cursor=pointer]:
+              - /url: /docs/extend/record-and-replay
+          - listitem [ref=e114]:
+            - link "MCP" [ref=e115] [cursor=pointer]:
+              - /url: /docs/extend/mcp
+      - generic [ref=e117]:
+        - heading "Linux" [level=3] [ref=e118]
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "Desktop app" [ref=e121] [cursor=pointer]:
+              - /url: /docs/linux/linux-app
+      - generic [ref=e123]:
+        - heading "Windows" [level=3] [ref=e124]
+        - list [ref=e125]:
+          - listitem [ref=e126]:
+            - link "Desktop app" [ref=e127] [cursor=pointer]:
+              - /url: /docs/windows/windows-app
+          - listitem [ref=e129]:
+            - link "Windows sandbox" [ref=e130] [cursor=pointer]:
+              - /url: /docs/windows/windows-sandbox
+          - listitem [ref=e132]:
+            - link "WSL" [ref=e133] [cursor=pointer]:
+              - /url: /docs/windows/wsl
+    - main [ref=e135]:
+      - generic [ref=e138]:
+        - generic [ref=e140]:
+          - heading "Custom instructions with AGENTS.md" [level=1] [ref=e142]
+          - paragraph [ref=e143]: Give Codex extra instructions and context for your project
+          - button "Copy Page" [ref=e147] [cursor=pointer]
+        - article [ref=e152]:
+          - paragraph [ref=e153]:
+            - text: Codex reads
+            - code [ref=e154]: AGENTS.md
+            - text: files before doing any work. By layering global guidance with project-specific overrides, you can start each task with consistent expectations, no matter which repository you open.
+          - heading "How Codex discovers guidance Copy link to How Codex discovers guidance" [level=2] [ref=e155]:
+            - generic [ref=e156]: How Codex discovers guidance
+            - button "Copy link to How Codex discovers guidance" [ref=e157] [cursor=pointer]
+          - paragraph [ref=e160]: "Codex builds an instruction chain when it starts (once per run; in the TUI this usually means once per launched session). Discovery follows this precedence order:"
+          - list [ref=e161]:
+            - listitem [ref=e162]:
+              - strong [ref=e163]: "Global scope:"
+              - text: In your Codex home directory (defaults to
+              - code [ref=e164]: ~/.codex
+              - text: ", unless you set"
+              - code [ref=e165]: CODEX_HOME
+              - text: ), Codex reads
+              - code [ref=e166]: AGENTS.override.md
+              - text: if it exists. Otherwise, Codex reads
+              - code [ref=e167]: AGENTS.md
+              - text: . Codex uses only the first non-empty file at this level.
+            - listitem [ref=e168]:
+              - strong [ref=e169]: "Project scope:"
+              - text: Starting at the project root (typically the Git root), Codex walks down to your current working directory. If Codex cannot find a project root, it only checks the current directory. In each directory along the path, it checks for
+              - code [ref=e170]: AGENTS.override.md
+              - text: ", then"
+              - code [ref=e171]: AGENTS.md
+              - text: ", then any fallback names in"
+              - code [ref=e172]: project_doc_fallback_filenames
+              - text: . Codex includes at most one file per directory.
+            - listitem [ref=e173]:
+              - strong [ref=e174]: "Merge order:"
+              - text: Codex concatenates files from the root down, joining them with blank lines. Files closer to your current directory override earlier guidance because they appear later in the combined prompt.
+          - paragraph [ref=e175]:
+            - text: Codex skips empty files and stops adding files once the combined size reaches the limit defined by
+            - code [ref=e176]: project_doc_max_bytes
+            - text: (32 KiB by default). For details on these knobs, see
+            - link "Project instructions discovery" [ref=e177] [cursor=pointer]:
+              - /url: /docs/config-file/config-advanced#project-instructions-discovery
+            - text: . Raise the limit or split instructions across nested directories when you hit the cap.
+          - heading "Create global guidance Copy link to Create global guidance" [level=2] [ref=e178]:
+            - generic [ref=e179]: Create global guidance
+            - button "Copy link to Create global guidance" [ref=e180] [cursor=pointer]
+          - paragraph [ref=e183]: Create persistent defaults in your Codex home directory so every repository inherits your working agreements.
+          - list [ref=e184]:
+            - listitem [ref=e185]:
+              - paragraph [ref=e186]: "Ensure the directory exists:"
+              - generic [ref=e187]:
+                - code [ref=e188]:
+                  - generic [ref=e189]: mkdir -p ~/.codex
+                - generic [ref=e190]:
+                  - button "Copy code to clipboard" [ref=e191] [cursor=pointer]
+                  - status [ref=e194]
+            - listitem [ref=e195]:
+              - paragraph [ref=e196]:
+                - text: Create
+                - code [ref=e197]: ~/.codex/AGENTS.md
+                - text: "with reusable preferences:"
+              - generic [ref=e198]:
+                - code [ref=e199]:
+                  - generic [ref=e200]: "# ~/.codex/AGENTS.md"
+                  - generic [ref=e201]: "## Working agreements"
+                  - generic [ref=e202]: "- Always run `npm test` after modifying JavaScript files."
+                  - generic [ref=e203]: "- Prefer `pnpm` when installing dependencies."
+                  - generic [ref=e204]: "- Ask for confirmation before adding new production dependencies."
+                - generic [ref=e205]:
+                  - button "Copy code to clipboard" [ref=e206] [cursor=pointer]
+                  - status [ref=e209]
+            - listitem [ref=e210]:
+              - paragraph [ref=e211]: "Run Codex anywhere to confirm it loads the file:"
+              - generic [ref=e212]:
+                - code [ref=e213]:
+                  - generic [ref=e214]: codex --ask-for-approval never "Summarize the current instructions."
+                - generic [ref=e215]:
+                  - button "Copy code to clipboard" [ref=e216] [cursor=pointer]
+                  - status [ref=e219]
+              - paragraph [ref=e220]:
+                - text: "Expected: Codex quotes the items from"
+                - code [ref=e221]: ~/.codex/AGENTS.md
+                - text: before proposing work.
+          - paragraph [ref=e222]:
+            - text: Use
+            - code [ref=e223]: ~/.codex/AGENTS.override.md
+            - text: when you need a temporary global override without deleting the base file. Remove the override to restore the shared guidance.
+          - heading "Layer project instructions Copy link to Layer project instructions" [level=2] [ref=e224]:
+            - generic [ref=e225]: Layer project instructions
+            - button "Copy link to Layer project instructions" [ref=e226] [cursor=pointer]
+          - paragraph [ref=e229]: Repository-level files keep Codex aware of project norms while still inheriting your global defaults.
+          - list [ref=e230]:
+            - listitem [ref=e231]:
+              - paragraph [ref=e232]:
+                - text: In your repository root, add an
+                - code [ref=e233]: AGENTS.md
+                - text: "that covers basic setup:"
+              - generic [ref=e234]:
+                - code [ref=e235]:
+                  - generic [ref=e236]: "# AGENTS.md"
+                  - generic [ref=e237]: "## Repository expectations"
+                  - generic [ref=e238]: "- Run `npm run lint` before opening a pull request."
+                  - generic [ref=e239]: "- Document public utilities in `docs/` when you change behavior."
+                - generic [ref=e240]:
+                  - button "Copy code to clipboard" [ref=e241] [cursor=pointer]
+                  - status [ref=e244]
+            - listitem [ref=e245]:
+              - paragraph [ref=e246]:
+                - text: Add overrides in nested directories when specific teams need different rules. For example, inside
+                - code [ref=e247]: services/payments/
+                - text: create
+                - code [ref=e248]: AGENTS.override.md
+                - text: ":"
+              - generic [ref=e249]:
+                - code [ref=e250]:
+                  - generic [ref=e251]: "# services/payments/AGENTS.override.md"
+                  - generic [ref=e252]: "## Payments service rules"
+                  - generic [ref=e253]: "- Use `make test-payments` instead of `npm test`."
+                  - generic [ref=e254]: "- Never rotate API keys without notifying the security channel."
+                - generic [ref=e255]:
+                  - button "Copy code to clipboard" [ref=e256] [cursor=pointer]
+                  - status [ref=e259]
+            - listitem [ref=e260]:
+              - paragraph [ref=e261]: "Start Codex from the payments directory:"
+              - generic [ref=e262]:
+                - code [ref=e263]:
+                  - generic [ref=e264]: codex --cd services/payments --ask-for-approval never "List the instruction sources you loaded."
+                - generic [ref=e265]:
+                  - button "Copy code to clipboard" [ref=e266] [cursor=pointer]
+                  - status [ref=e269]
+              - paragraph [ref=e270]:
+                - text: "Expected: Codex reports the global file first, the repository root"
+                - code [ref=e271]: AGENTS.md
+                - text: second, and the payments override last.
+          - paragraph [ref=e272]: Codex stops searching once it reaches your current directory, so place overrides as close to specialized work as possible.
+          - paragraph [ref=e273]: "Here is a sample repository after you add a global file and a payments-specific override:"
+          - tree [ref=e276]:
+            - listitem [ref=e277]:
+              - generic [ref=e278]:
+                - generic [ref=e282]: AGENTS.md
+                - generic [ref=e284]: Repository expectations
+            - listitem [ref=e285]:
+              - group "services/ directory" [ref=e286]:
+                - generic "services/" [ref=e287]
+                - group [ref=e294]:
+                  - listitem [ref=e295]:
+                    - group "payments/ directory" [ref=e296]:
+                      - generic "payments/" [ref=e297]
+                      - group [ref=e304]:
+                        - listitem [ref=e305]:
+                          - generic [ref=e306]:
+                            - generic [ref=e310]: AGENTS.md
+                            - generic [ref=e312]: Ignored because an override exists
+                        - listitem [ref=e313]:
+                          - generic [ref=e314]:
+                            - generic [ref=e318]: AGENTS.override.md
+                            - generic [ref=e320]: Payments service rules
+                        - listitem [ref=e321]:
+                          - generic [ref=e322]: README.md
+                  - listitem [ref=e328]:
+                    - group "search/ directory" [ref=e329]:
+                      - generic "search/" [ref=e330]
+          - heading "Add code review rules Copy link to Add code review rules" [level=2] [ref=e336]:
+            - generic [ref=e337]: Add code review rules
+            - button "Copy link to Add code review rules" [ref=e338] [cursor=pointer]
+          - paragraph [ref=e341]:
+            - text: For
+            - link "Codex code review in GitHub" [ref=e342] [cursor=pointer]:
+              - /url: /docs/third-party/github#customize-what-codex-reviews
+            - text: ", add a"
+            - code [ref=e343]: "## Code Review Rules"
+            - text: section to the
+            - code [ref=e344]: AGENTS.md
+            - text: closest to the code the rules govern. Put repository-wide checks at the root and service-specific checks in a nested file.
+          - generic [ref=e345]:
+            - code [ref=e346]:
+              - generic [ref=e347]: "## Code Review Rules"
+              - generic [ref=e348]: "### Experiment cohorts"
+              - generic [ref=e349]: "- Do not filter treatment comparisons on post-exposure behavior, including conversion or retention."
+              - generic [ref=e350]: "Safe path: build cohorts from assignment or exposure; report conversion as an outcome."
+            - generic [ref=e351]:
+              - button "Copy code to clipboard" [ref=e352] [cursor=pointer]
+              - status [ref=e355]
+          - paragraph [ref=e356]:
+            - text: Keep rules concise, explain the behavior to flag and any safe path or exception, and reserve formatting and lint checks for CI. See
+            - link "Customize what Codex reviews" [ref=e357] [cursor=pointer]:
+              - /url: /docs/third-party/github#customize-what-codex-reviews
+            - text: for setup and rule-writing guidance.
+          - heading "Customize fallback filenames Copy link to Customize fallback filenames" [level=2] [ref=e358]:
+            - generic [ref=e359]: Customize fallback filenames
+            - button "Copy link to Customize fallback filenames" [ref=e360] [cursor=pointer]
+          - paragraph [ref=e363]:
+            - text: If your repository already uses a different filename (for example
+            - code [ref=e364]: TEAM_GUIDE.md
+            - text: ), add it to the fallback list so Codex treats it like an instructions file.
+          - list [ref=e365]:
+            - listitem [ref=e366]:
+              - paragraph [ref=e367]: "Edit your Codex configuration:"
+              - generic [ref=e368]:
+                - code [ref=e369]:
+                  - generic [ref=e370]: "# ~/.codex/config.toml"
+                  - generic [ref=e371]: project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md"]
+                  - generic [ref=e372]: project_doc_max_bytes = 65536
+                - generic [ref=e373]:
+                  - button "Copy code to clipboard" [ref=e374] [cursor=pointer]
+                  - status [ref=e377]
+            - listitem [ref=e378]:
+              - paragraph [ref=e379]: Restart Codex or run a new command so the updated configuration loads.
+          - paragraph [ref=e380]:
+            - text: "Now Codex checks each directory in this order:"
+            - code [ref=e381]: AGENTS.override.md
+            - text: ","
+            - code [ref=e382]: AGENTS.md
+            - text: ","
+            - code [ref=e383]: TEAM_GUIDE.md
+            - text: ","
+            - code [ref=e384]: .agents.md
+            - text: . Filenames not on this list are ignored for instruction discovery. The larger byte limit allows more combined guidance before truncation.
+          - paragraph [ref=e385]: "With the fallback list in place, Codex treats the alternate files as instructions:"
+          - tree [ref=e388]:
+            - listitem [ref=e389]:
+              - generic [ref=e390]:
+                - generic [ref=e394]: TEAM_GUIDE.md
+                - generic [ref=e396]: Detected via fallback list
+            - listitem [ref=e397]:
+              - generic [ref=e398]:
+                - generic [ref=e402]: .agents.md
+                - generic [ref=e404]: Fallback file in root
+            - listitem [ref=e405]:
+              - group "support/ directory" [ref=e406]:
+                - generic "support/" [ref=e407]
+                - group [ref=e414]:
+                  - listitem [ref=e415]:
+                    - generic [ref=e416]:
+                      - generic [ref=e420]: AGENTS.override.md
+                      - generic [ref=e422]: Overrides fallback guidance
+                  - listitem [ref=e423]:
+                    - group "playbooks/ directory" [ref=e424]:
+                      - generic "playbooks/" [ref=e425]
+          - paragraph [ref=e431]:
+            - text: Set the
+            - code [ref=e432]: CODEX_HOME
+            - text: "environment variable when you want a different profile, such as a project-specific automation user:"
+          - generic [ref=e433]:
+            - code [ref=e434]:
+              - generic [ref=e435]: CODEX_HOME=$(pwd)/.codex codex exec "List active instruction sources"
+            - generic [ref=e436]:
+              - button "Copy code to clipboard" [ref=e437] [cursor=pointer]
+              - status [ref=e440]
+          - paragraph [ref=e441]:
+            - text: "Expected: The output lists files relative to the custom"
+            - code [ref=e442]: .codex
+            - text: directory.
+          - heading "Verify your setup Copy link to Verify your setup" [level=2] [ref=e443]:
+            - generic [ref=e444]: Verify your setup
+            - button "Copy link to Verify your setup" [ref=e445] [cursor=pointer]
+          - list [ref=e448]:
+            - listitem [ref=e449]:
+              - text: Run
+              - code [ref=e450]: codex --ask-for-approval never "Summarize the current instructions."
+              - text: from a repository root. Codex should echo guidance from global and project files in precedence order.
+            - listitem [ref=e451]:
+              - text: Use
+              - code [ref=e452]: codex --cd subdir --ask-for-approval never "Show which instruction files are active."
+              - text: to confirm nested overrides replace broader rules.
+            - listitem [ref=e453]:
+              - text: To audit which instruction files Codex loaded, opt into a plaintext TUI log with
+              - code [ref=e454]: codex -c log_dir=./.codex-log
+              - text: and check
+              - code [ref=e455]: ./.codex-log/codex-tui.log
+              - text: ", or inspect the most recent"
+              - code [ref=e456]: session-*.jsonl
+              - text: file if you enabled session logging.
+            - listitem [ref=e457]: If instructions look stale, restart Codex in the target directory. Codex rebuilds the instruction chain on every run (and at the start of each TUI session), so there is no cache to clear manually.
+          - heading "Troubleshoot discovery issues Copy link to Troubleshoot discovery issues" [level=2] [ref=e458]:
+            - generic [ref=e459]: Troubleshoot discovery issues
+            - button "Copy link to Troubleshoot discovery issues" [ref=e460] [cursor=pointer]
+          - list [ref=e463]:
+            - listitem [ref=e464]:
+              - strong [ref=e465]: "Nothing loads:"
+              - text: Verify you are in the intended repository and that
+              - code [ref=e466]: codex status
+              - text: reports the workspace root you expect. Ensure instruction files contain content; Codex ignores empty files.
+            - listitem [ref=e467]:
+              - strong [ref=e468]: "Wrong guidance appears:"
+              - text: Look for an
+              - code [ref=e469]: AGENTS.override.md
+              - text: higher in the directory tree or under your Codex home. Rename or remove the override to fall back to the regular file.
+            - listitem [ref=e470]:
+              - strong [ref=e471]: "Codex ignores fallback names:"
+              - text: Confirm you listed the names in
+              - code [ref=e472]: project_doc_fallback_filenames
+              - text: without typos, then restart Codex so the updated configuration takes effect.
+            - listitem [ref=e473]:
+              - strong [ref=e474]: "Instructions truncated:"
+              - text: Raise
+              - code [ref=e475]: project_doc_max_bytes
+              - text: or split large files across nested directories to keep critical guidance intact.
+            - listitem [ref=e476]:
+              - strong [ref=e477]: "Profile confusion:"
+              - text: Run
+              - code [ref=e478]: echo $CODEX_HOME
+              - text: before launching Codex. A non-default value points Codex at a different home directory than the one you edited.
+          - heading "Next steps Copy link to Next steps" [level=2] [ref=e479]:
+            - generic [ref=e480]: Next steps
+            - button "Copy link to Next steps" [ref=e481] [cursor=pointer]
+          - list [ref=e484]:
+            - listitem [ref=e485]:
+              - text: Visit the official
+              - link "AGENTS.md" [ref=e486] [cursor=pointer]:
+                - /url: https://agents.md
+              - text: website for more information.
+            - listitem [ref=e487]:
+              - text: Review
+              - link "Prompting Codex" [ref=e488] [cursor=pointer]:
+                - /url: /docs/prompting
+              - text: for conversational patterns that pair well with persistent guidance.
+      - navigation [ref=e491]:
+        - link "Next Subagents" [ref=e493] [cursor=pointer]:
+          - /url: /docs/agent-configuration/subagents
+          - generic [ref=e494]:
+            - generic [ref=e495]: Next
+            - generic [ref=e496]: Subagents
+  - generic:
+    - button "Ask AI" [ref=e499] [cursor=pointer]
+    - dialog [ref=e501]:
+      - banner [ref=e502]:
+        - heading "Docs agent" [level=2] [ref=e503]
+        - generic [ref=e504]:
+          - button "Start a new docs agent chat" [ref=e505] [cursor=pointer]
+          - button "Close docs agent" [ref=e508] [cursor=pointer]
+      - paragraph [ref=e513]: Loading docs agent...

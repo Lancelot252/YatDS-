@@ -1,0 +1,212 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link "Skip to content" [ref=f3e4] [cursor=pointer]:
+        - /url: "#start-of-content"
+      - banner [ref=f3e9]:
+        - heading "Navigation Menu" [level=2] [ref=f3e10]
+        - generic [ref=f3e11]:
+          - link "Homepage" [ref=f3e13] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f3e16]:
+            - navigation "Global" [ref=f3e17]:
+              - list [ref=f3e18]:
+                - listitem [ref=f3e19]:
+                  - button "Platform" [ref=f3e21] [cursor=pointer]
+                - listitem [ref=f3e24]:
+                  - button "Solutions" [ref=f3e26] [cursor=pointer]
+                - listitem [ref=f3e29]:
+                  - button "Resources" [ref=f3e31] [cursor=pointer]
+                - listitem [ref=f3e34]:
+                  - button "Open Source" [ref=f3e36] [cursor=pointer]
+                - listitem [ref=f3e39]:
+                  - button "Enterprise" [ref=f3e41] [cursor=pointer]
+                - listitem [ref=f3e44]:
+                  - link "Pricing" [ref=f3e45] [cursor=pointer]:
+                    - /url: https://github.com/pricing
+            - generic [ref=f3e46]:
+              - button "Search or jump to, type / to search" [ref=f3e48] [cursor=pointer]
+              - link "Sign in" [ref=f3e55] [cursor=pointer]:
+                - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FLancelot252%2FYatDS-%2Fblob%2Fmain%2FAGENTS.md
+              - link "Sign up" [ref=f3e58] [cursor=pointer]:
+                - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=Lancelot252%2FYatDS-
+              - button "Appearance settings" [ref=f3e61] [cursor=pointer]
+    - main [ref=f3e68]:
+      - generic [ref=f3e69]:
+        - generic [ref=f3e70]:
+          - generic [ref=f3e72]:
+            - link "Lancelot252" [ref=f3e76] [cursor=pointer]:
+              - /url: /Lancelot252
+            - generic [ref=f3e77]: /
+            - strong [ref=f3e78]:
+              - link "YatDS-" [ref=f3e79] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-
+            - generic [ref=f3e80]: Public
+          - generic [ref=f3e81]:
+            - list:
+              - listitem [ref=f3e82]:
+                - link "You must be signed in to change notification settings" [ref=f3e83] [cursor=pointer]:
+                  - /url: /login?return_to=%2FLancelot252%2FYatDS-
+                  - text: Notifications
+              - listitem [ref=f3e86]:
+                - link "Fork 0" [ref=f3e87] [cursor=pointer]:
+                  - /url: /login?return_to=%2FLancelot252%2FYatDS-
+                  - text: Fork
+                  - generic "0" [ref=f3e90]
+              - listitem [ref=f3e91]:
+                - link "You must be signed in to star a repository" [ref=f3e93] [cursor=pointer]:
+                  - /url: /login?return_to=%2FLancelot252%2FYatDS-
+                  - text: Star
+                  - generic "0 users starred this repository" [ref=f3e96]: "0"
+        - navigation "Repository" [ref=f3e97]:
+          - list [ref=f3e98]:
+            - listitem [ref=f3e99]:
+              - link "Code" [ref=f3e100] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-
+            - listitem [ref=f3e104]:
+              - link "Issues" [ref=f3e105] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-/issues
+            - listitem [ref=f3e110]:
+              - link "Pull requests" [ref=f3e111] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-/pulls
+            - listitem [ref=f3e115]:
+              - link "Actions" [ref=f3e116] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-/actions
+            - listitem [ref=f3e120]:
+              - link "Projects" [ref=f3e121] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-/projects
+            - listitem [ref=f3e125]:
+              - link "Security and quality" [ref=f3e126] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-/security
+            - listitem [ref=f3e130]:
+              - link "Insights" [ref=f3e131] [cursor=pointer]:
+                - /url: /Lancelot252/YatDS-/pulse
+      - generic [ref=f3e142]:
+        - generic [ref=f3e144]:
+          - generic [ref=f3e147]:
+            - generic [ref=f3e148]:
+              - generic [ref=f3e149]:
+                - heading "Collapse file tree" [level=2] [ref=f3e150]:
+                  - button "Collapse file tree" [expanded] [ref=f3e151] [cursor=pointer]
+                - heading "Files" [level=2] [ref=f3e155]
+              - generic [ref=f3e156]:
+                - button "main branch" [ref=f3e158] [cursor=pointer]:
+                  - generic [ref=f3e159]: main
+                - button "Search this repository (forward slash)" [ref=f3e164] [cursor=pointer]
+            - combobox "Go to file" [ref=f3e172]
+            - navigation "File Tree Navigation" [ref=f3e178]:
+              - tree "Files" [ref=f3e180]:
+                - treeitem "ppt" [level=1] [ref=f3e181]
+                - treeitem "教案" [level=1] [ref=f3e193]
+                - treeitem "网页" [level=1] [ref=f3e205]
+                - treeitem "讲义" [level=1] [ref=f3e217]
+                - treeitem ".gitignore" [level=1] [ref=f3e229]
+                - treeitem "AGENTS.md" [level=1] [ref=f3e237]
+                - treeitem "总计划.md" [level=1] [ref=f3e245]
+                - treeitem "课程内容编写要求.md" [level=1] [ref=f3e253]
+          - slider "Draggable pane splitter" [ref=f3e262]
+        - generic [ref=f3e265]:
+          - generic [ref=f3e269]:
+            - generic [ref=f3e271]:
+              - navigation [ref=f3e272]:
+                - heading "Breadcrumbs" [level=2] [ref=f3e273]
+                - list [ref=f3e274]:
+                  - listitem [ref=f3e275]:
+                    - link "YatDS-" [ref=f3e276] [cursor=pointer]:
+                      - /url: /Lancelot252/YatDS-/tree/main
+              - generic [ref=f3e277]:
+                - text: /
+                - heading "AGENTS.md" [level=1] [ref=f3e278]
+              - button "Copy path" [ref=f3e279] [cursor=pointer]
+            - button "More file actions" [ref=f3e286] [cursor=pointer]
+          - generic [ref=f3e289]:
+            - generic [ref=f3e291]:
+              - heading "Latest commit" [level=2] [ref=f3e292]
+              - generic [ref=f3e295]:
+                - heading "History" [level=2] [ref=f3e296]
+                - link "History" [ref=f3e297] [cursor=pointer]:
+                  - /url: /Lancelot252/YatDS-/commits/main/AGENTS.md
+            - generic [ref=f3e301]:
+              - generic [ref=f3e303]:
+                - heading "File metadata and controls" [level=2] [ref=f3e304]
+                - generic [ref=f3e305]:
+                  - list "File view" [ref=f3e306]:
+                    - listitem [ref=f3e307]:
+                      - button "Preview" [pressed] [ref=f3e308] [cursor=pointer]
+                    - listitem [ref=f3e311]:
+                      - button "Code" [ref=f3e312] [cursor=pointer]
+                    - listitem [ref=f3e315]:
+                      - button "Blame" [ref=f3e316] [cursor=pointer]
+                  - generic "1.94 KB" [ref=f3e321]: 31 lines (23 loc) · 1.94 KB
+                - generic [ref=f3e322]:
+                  - generic [ref=f3e323]:
+                    - generic [ref=f3e324]:
+                      - link "Raw" [ref=f3e326] [cursor=pointer]:
+                        - /url: https://github.com/Lancelot252/YatDS-/raw/refs/heads/main/AGENTS.md
+                      - button "Copy raw file" [ref=f3e330] [cursor=pointer]
+                      - button "Download raw file" [ref=f3e335] [cursor=pointer]
+                    - generic [ref=f3e339]:
+                      - button "You must be signed in to make or propose changes" [disabled] [ref=f3e341]
+                      - button "More edit options" [ref=f3e345] [cursor=pointer]
+                  - button "Outline" [ref=f3e348] [cursor=pointer]
+              - region "AGENTS.md" [ref=f3e352]:
+                - article [ref=f3e354]:
+                  - generic [ref=f3e355]:
+                    - heading "项目编写规则" [level=1] [ref=f3e356]
+                    - 'link "Permalink: 项目编写规则" [ref=f3e357] [cursor=pointer]':
+                      - /url: "#项目编写规则"
+                  - generic [ref=f3e360]:
+                    - heading "强制依据" [level=2] [ref=f3e361]
+                    - 'link "Permalink: 强制依据" [ref=f3e362] [cursor=pointer]':
+                      - /url: "#强制依据"
+                  - paragraph [ref=f3e365]: 凡创建、续写、修改或审查本项目的教案、讲义和网页课程内容，必须先阅读并遵守：
+                  - list [ref=f3e366]:
+                    - listitem [ref=f3e367]:
+                      - code [ref=f3e368]: 课程内容编写要求.md
+                      - text: ；
+                    - listitem [ref=f3e369]:
+                      - code [ref=f3e370]: 总计划.md
+                      - text: ；
+                    - listitem [ref=f3e371]:
+                      - code [ref=f3e372]: week2移出内容_后续章节写作备忘.md
+                      - text: ；
+                    - listitem [ref=f3e373]: 目标周次前两周的同类文件，用于保持结构和表达方式一致；
+                    - listitem [ref=f3e374]: OpenAI、Anthropic、Google、GitHub 等相关 AI 产品供应商的最新官方文档。
+                  - paragraph [ref=f3e375]:
+                    - text: 当前用户在任务中提出的新要求优先级最高；如新要求具有长期适用性，应同步更新
+                    - code [ref=f3e376]: 课程内容编写要求.md
+                    - text: 。
+                  - generic [ref=f3e377]:
+                    - heading "每次编写必须执行" [level=2] [ref=f3e378]
+                    - 'link "Permalink: 每次编写必须执行" [ref=f3e379] [cursor=pointer]':
+                      - /url: "#每次编写必须执行"
+                  - list [ref=f3e382]:
+                    - listitem [ref=f3e383]: 先确认目标周次及本周范围，不提前完整讲授后续内容。
+                    - listitem [ref=f3e384]: 涉及 AI 产品的功能、用法、限制或规则时，先查阅对应供应商的最新官方文档，并记录文档链接与访问日期。
+                    - listitem [ref=f3e385]: 区分不同供应商的产品行为，不把某一产品的规则推广为所有编码 Agent 的共同规则。
+                    - listitem [ref=f3e386]: 教案沿用相邻周次方式，写成教师授课稿，不编写或评价作业、课堂任务、课堂活动、分组练习、评分和考核。
+                    - listitem [ref=f3e387]: 讲义只聚焦编码 Agent 的使用，所有概念和示例都要落到编码 Agent 的真实使用场景。
+                    - listitem [ref=f3e388]:
+                      - text: 专业术语首次出现时使用
+                      - code [ref=f3e389]: "[^序号]"
+                      - text: 标注，并在同一章节提供一句简单、易懂的解释；后续不重复标注。
+                    - listitem [ref=f3e390]: 注释不得写入代码块；网页注释继续使用小号上标和小号字体。
+                    - listitem [ref=f3e391]:
+                      - text: 修改讲义后运行
+                      - code [ref=f3e392]: node 网页/build-content.mjs
+                      - text: ，更新
+                      - code [ref=f3e393]: 网页/content.js
+                      - text: 。
+                    - listitem [ref=f3e394]:
+                      - text: 交付前按
+                      - code [ref=f3e395]: 课程内容编写要求.md
+                      - text: 的检查清单逐项核对，并验证资料来源、注释引用与解释一一对应。
+                  - generic [ref=f3e396]:
+                    - heading "文件保护" [level=2] [ref=f3e397]
+                    - 'link "Permalink: 文件保护" [ref=f3e398] [cursor=pointer]':
+                      - /url: "#文件保护"
+                  - list [ref=f3e401]:
+                    - listitem [ref=f3e402]: 不覆盖或删除用户已有内容；修改应限定在当前任务涉及的文件。
+                    - listitem [ref=f3e403]: 不把模板、示例或备忘中的内容原样复制进新周次，应结合本周目标重新组织。
+                    - listitem [ref=f3e404]: 如要求与现有内容冲突，优先修正目标文件，并说明影响范围。
+  - alert [ref=f3e408]

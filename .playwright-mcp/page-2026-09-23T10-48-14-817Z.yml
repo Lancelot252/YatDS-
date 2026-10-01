@@ -1,0 +1,15 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]: 项目规则与上下文
+    - generic [ref=e4]: 教学模拟项目
+  - main [ref=e5]:
+    - heading "仓库根目录的通用规则" [level=1] [ref=e6]
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - strong [ref=e9]: repo/
+        - strong [ref=e10]: AGENTS.md
+        - text: package.json src/api/ src/core/ services/payments/ tests/
+      - generic [ref=e11]:
+        - generic [ref=e12]: repo/AGENTS.md
+        - generic [ref=e13]: "# Project instructions · 教学示例 - `src/api/` 只处理 HTTP 输入输出；业务规则放在 `src/core/`。 - 修改后运行 `npm test`，并报告实际结果。 - 不直接编辑 `src/generated/`；修改 `openapi.yaml` 后运行 `npm run generate`。"
+    - generic [ref=e14]: 规则来自实际示例文件；命令需在项目中核验。

@@ -331,7 +331,23 @@ GitHub 官方建议 PR 小而聚焦，并在请求他人审查前先自查 diff�
 
 ## 四、合并请求审查
 
-### 1. 一条可操作发现的结构
+### 1. 怎样评价 Agent 生成结果
+
+评价对象是 Agent 实际交付的代码、测试、配置和说明，而不只是最后一段回答。先把任务要求写成可观察结果，再用正确基线下的 diff 和运行证据逐项核对：
+
+| 评价维度 | 要核对的问题 | 可查看的证据 |
+| --- | --- | --- |
+| 需求符合度 | 必须改变的行为是否实现，不得改变的行为是否保持 | 需求、关键路径的旧代码与新代码、实际运行结果 |
+| 范围与完整性 | 是否漏改调用方、测试或文档，是否混入无关文件、依赖或配置 | 文件清单、逐文件 diff、项目引用关系 |
+| 正确性与风险 | 正常、失败、边界和权限路径是否合理，是否引入兼容或数据风险 | 关键分支、调用方、针对性测试与人工检查 |
+| 验证可信度 | 检查是否真的运行且覆盖本次变化，跳过或未运行项是否说明 | 命令、退出状态、测试数量、警告和环境条件 |
+| 说明可信度 | Agent 的摘要、PR 说明与实际变化和证据是否一致 | 最终说明对照 diff 与原始检查输出 |
+
+例如，Agent 声称“已修复普通用户访问 `/admin`”，审阅者应在 `src/auth/guard.py` 确认普通用户被拒绝，再看管理员和未登录路径、对应测试及测试输出。如果摘要说“只改权限判断”，diff 却还有锁文件和 CI 变化，就要先查明原因。测试通过但没有覆盖普通用户时，不能据此评价为需求已验证。
+
+结论应落到具体证据：符合要求的部分、必须修复的问题、尚未验证的部分及其影响。对有明确错误的结果要求修复；证据不足时要求补充检查或标明限制。不要用“代码看起来不错”或单个通过数量代替判断，也不要把评价 Agent 结果写成对学生或工具的打分。
+
+### 2. 一条可操作发现的结构
 
 | 字段 | 要回答的问题 |
 | --- | --- |
@@ -352,7 +368,7 @@ GitHub 官方建议 PR 小而聚焦，并在请求他人审查前先自查 diff�
 
 这样的意见比“权限逻辑可能有问题”更容易复现、讨论和修复。修改后应检查新增 diff，并验证评论对应的问题真正解决。
 
-### 2. 没有发现问题时怎样报告
+### 3. 没有发现问题时怎样报告
 
 “未发现可操作问题”是合格结果，但要同时说明：
 
@@ -364,7 +380,7 @@ GitHub 官方建议 PR 小而聚焦，并在请求他人审查前先自查 diff�
 
 Agent 不能为了凑数量把低置信猜测写成 Bug。反过来，Agent 没有发现问题也不是批准依据。
 
-### 3. GitHub Copilot code review 的边界
+### 4. GitHub Copilot code review 的边界
 
 GitHub 官方文档说明，Copilot code review 可以审查 PR 并提供反馈；Copilot CLI 的 `/review` 可以在终端中分析代码变化。这些入口和命令只属于对应 GitHub 产品，不能推广为所有编码 Agent 的统一行为。
 
@@ -374,7 +390,7 @@ GitHub 官方同时明确说明 Copilot 可能漏掉问题或出错，应仔细�
 
 图片来源：[GitHub Docs：Using GitHub Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review)（访问日期：2026-08-11）。截图只说明 GitHub Copilot 的界面行为；其他编码 Agent 的审查入口和反馈机制需要分别确认。
 
-### 4. 完整审查 Prompt
+### 5. 完整审查 Prompt
 
 ```text
 请审查当前分支相对 `[基线]` 的 diff，不修改文件。
@@ -386,6 +402,7 @@ GitHub 官方同时明确说明 Copilot 可能漏掉问题或出错，应仔细�
 4. 依赖、迁移和配置风险；
 5. 可维护性问题。
 
+先按需求符合度、范围与完整性、正确性与风险、验证可信度、说明可信度评价 Agent 的实际交付。
 每条发现包含严重程度、文件位置、触发条件、实际影响、证据和最小修复方向。
 没有高置信问题时，明确说明实际检查与剩余未验证风险；不要为了凑数量而猜测。
 ```
@@ -447,18 +464,21 @@ Branch 隔离 -> Commit 记录 -> PR 说明
 1. 先确认需求、基线和真实比较范围；
 2. 文件清单先于逐行细节，范围异常先调查；
 3. Agent 摘要用于导航，diff 才是变更事实；
-4. 发现要写严重程度、位置、触发条件、影响和证据；
-5. 格式、lint、类型、测试和扫描各有边界；
-6. Commit Message 只描述实际暂存变化；
-7. PR 应小而聚焦，并提供验证与剩余风险；
-8. GitHub Copilot 的 `/review` 等行为不能推广为所有 Agent 的命令；
-9. 已共享历史通常优先考虑可追踪的 revert，但外部副作用需另行恢复；
-10. 人对是否批准、合并和发布承担最终责任。
+4. 评价 Agent 结果要核对需求、范围、行为、验证与说明；
+5. 发现要写严重程度、位置、触发条件、影响和证据；
+6. 格式、lint、类型、测试和扫描各有边界；
+7. Commit Message 只描述实际暂存变化；
+8. PR 应小而聚焦，并提供验证与剩余风险；
+9. GitHub Copilot 的 `/review` 等行为不能推广为所有 Agent 的命令；
+10. 已共享历史通常优先考虑可追踪的 revert，但外部副作用需另行恢复；
+11. 人对是否批准、合并和发布承担最终责任。
 
 ---
 
 ## 参考文献
 
+- [OpenAI Developers：Using Goals in Codex](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex)（访问日期：2026-09-23）
+- [GitHub Docs：Reviewing proposed changes in a pull request](https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request)（访问日期：2026-09-23）
 - [OpenAI Developers：Codex 可用于构建、测试并审查变更](https://developers.openai.com/)（访问日期：2026-08-11）
 - [GitHub Docs：About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review)（访问日期：2026-08-11）
 - [GitHub Docs：Requesting a code review with GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/agentic-code-review)（访问日期：2026-08-11）

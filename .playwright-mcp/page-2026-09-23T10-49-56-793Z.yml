@@ -1,0 +1,16 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]: 项目规则与上下文
+    - generic [ref=f1e4]: 教学模拟项目
+  - main [ref=f1e5]:
+    - heading "支付目录的局部规则" [level=1] [ref=f1e6]
+    - generic [ref=f1e7]:
+      - generic [ref=f1e8]:
+        - strong [ref=f1e9]: repo/
+        - text: AGENTS.md services/
+        - strong [ref=f1e10]: payments/AGENTS.md
+        - text: src/ tests/
+      - generic [ref=f1e11]:
+        - generic [ref=f1e12]: services/payments/AGENTS.md
+        - generic [ref=f1e13]: "# payments/ 局部规则 · 教学示例 - 保持公开金额字段与状态码不变。 - 修改支付金额逻辑后运行 `npm run test:payments`。 - 此规则只适用于 `services/payments/`。"
+    - generic [ref=f1e14]: 局部规则只适用于 payments/，不扩展到整个仓库。

@@ -311,7 +311,9 @@ DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]
 
 图片来源：[DeepSeek：DeepSeek Harness 开发者预览版](https://www.deepseek.com/harness/)（访问日期：2026-08-15）。截图展示官方 Web UI 的插件设置页；界面与插件列表可能随版本更新。
 
-需要注意，DeepSeek Harness 当前处于 Developer Preview（开发者预览版）。官方说明核心插件和基础 API 仍会持续迭代，因此本节只介绍其产品定位和主要特点，不把当前命令、插件接口或功能列表当作长期稳定规则。
+需要注意，DeepSeek Harness 当前处于 Developer Preview（开发者预览版）。官方说明核心插件和基础 API[^6] 仍会持续迭代，因此本节只介绍其产品定位和主要特点，不把当前命令、插件接口或功能列表当作长期稳定规则。
+
+[^6]: API 是让不同程序按照约定互相发送请求和返回结果的接口。
 
 ### 7. 六款产品的主要区别
 
@@ -430,15 +432,88 @@ DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]
 
 ![YatCC-OL 容器内 VS Code 界面，左侧是文件浏览器，右侧是代码编辑区](figs/容器初始页面.png "YatCC-OL 容器内 VS Code 界面")
 
-### 3. 安装课程使用的编码 Agent
+### 3. 配置课程使用的编码 Agent
 
-在容器左侧活动栏中打开“扩展”，在插件商店搜索 **Roo Code**。课程环境使用的是发布者为 **RooVeterinaryInc** 的稳定版 **Roo Code**；不要选择搜索结果中的 **Roo Code Nightly**，也不要安装名称相近但发布者不同的扩展。确认名称和发布者后点击 **Install**。
+课程容器已经安装 Claude Code 和 `cc-switch`。本节要做的不是重新安装 Claude Code，而是通过 `cc-switch` 把 Claude Code 连接到课程提供的 AIHub 服务。这里的地址、密钥和代理步骤只适用于本课程环境，不是 Claude Code 的通用官方配置方法。
 
-![YatCC-OL 容器的扩展商店，红色标记依次指出扩展入口、Roo Code 稳定版和安装按钮](figs/roo-code安装.png "在课程容器中安装 Roo Code")
+#### 3.1 打开 `cc-switch`
 
-安装完成后，左侧活动栏会出现 Roo Code 图标。点击该图标即可打开 Agent 会话面板。Roo Code 本身不是模型，它需要连接模型服务才能生成回答；课程容器是否已经完成连接，应以课程主页中的环境指引和当前面板提示为准。
+在容器左上角打开主菜单，依次选择 **Terminal → New Terminal**，也可以直接使用终端快捷键。
 
+![YatCC-OL 容器中从左上角打开终端的操作位置](figs/打开终端.png "YatCC-OL 打开终端")
 
+在终端中运行：
+
+```bash
+cc-switch
+```
+
+`cc-switch` 是课程环境用于切换模型服务配置的工具，不是 Claude Code 本身。进入界面后，先阅读窗口底部的按键提示：通常使用方向键移动，按 `Enter` 编辑或确认，按 `Esc` 返回。不同版本显示的按键可能略有不同，应以当前界面底部的提示为准。
+
+#### 3.2 将界面切换为中文
+
+如果界面当前为英文，移动到 **Settings**，选择 **Language**，按 `Enter` 后将语言改为 **中文**。
+
+![cc-switch 的 Settings 页面，红框标出 Language 选项](figs/选择语言.png "在 cc-switch 中切换界面语言")
+
+语言切换只改变 `cc-switch` 的显示文字，不会改变 Claude Code 的回答语言或模型。
+
+#### 3.3 添加课程供应商
+
+进入 **供应商** 页面。若列表中保留了当前不使用的 **Claude Official** 配置，先选中它，再按照底部提示按 `D` 删除；然后按 `A` 添加自定义供应商。课程配置填写如下：
+
+| 字段 | 填写内容 |
+| --- | --- |
+| 模板 | `Custom` |
+| 名称 | `Yatcc` |
+| API 请求地址 | `https://aihub.arcsysu.cn/v1` |
+| API Key | 教师单独分配给本人的密钥 |
+
+![cc-switch 的新增供应商页面，显示 Yatcc 名称和课程 API 请求地址](figs/API设置.png "填写课程供应商信息")
+
+API Key 相当于访问模型服务的密码。输入时不要加引号或多余空格，也不要把密钥写进代码、提交到 Git、发到群聊，或截入公开图片。若怀疑密钥已经泄露，应停止使用并联系教师更换。
+
+继续将 **API 格式** 设置为 **OpenAI Chat Completions（需开启代理）**。这里的“OpenAI Chat Completions”描述的是课程 AIHub 提供的请求格式，并不表示当前一定在使用 OpenAI 模型。`cc-switch` 需要通过本地代理把这种格式转换为 Claude Code 可以使用的格式，因此后面还必须开启代理。
+
+![cc-switch 的供应商配置页面，API 格式已设置为 OpenAI Chat Completions](figs/API格式.png "选择 OpenAI Chat Completions API 格式")
+
+#### 3.4 设置模型映射并保存
+
+选中 **模型映射**，按 `Enter` 进入设置。`cc-switch` 的 Claude 配置界面会列出 Haiku、Sonnet 和 Opus 等模型角色，课程环境需要把这些角色映射到 AIHub 中实际可用的模型名称。按 `Space` 可以尝试从服务获取当前模型列表；按 `Enter` 可以手动编辑选中的映射。
+
+![cc-switch 的模型映射页面，显示三个 Claude 模型角色及其对应的课程模型](figs/选择模型.png "设置课程环境的模型映射")
+
+模型列表和可用额度可能调整，因此不要机械照抄截图中的模型名称。按教师当次公布的要求选择；如果没有指定，选择自己账号当前可用的模型，并确认至少为准备使用的角色设置了映射。完成后按界面顶部提示使用 `Ctrl+S` 保存，再按 `Esc` 返回。
+
+#### 3.5 开启本地代理
+
+回到 **首页**，按底部提示中的 `P` 开启代理。成功后，页面右上角应显示 **代理：开**，供应商应显示 **Yatcc**。
+
+使用 **OpenAI Chat Completions** 格式时，代理必须保持运行。不要关闭当前 `cc-switch` 终端；如果容器重启、终端任务结束或右上角重新显示 **代理：关**，需要再次运行 `cc-switch` 并开启代理。
+
+#### 3.6 打开 Claude Code 并验证连接
+
+点击编辑器右上角的 Claude Code 菊花图标，打开 Claude Code 面板。
+
+![YatCC-OL 编辑器右上角的 Claude Code 图标，红色箭头标出打开位置](figs/打开claudecode.png "打开 Claude Code 面板")
+
+在输入框下方点击模型名称，确认当前模型来自刚才保存的映射。然后发送一条不会改动项目的验证消息：
+
+```text
+请只回答“连接成功”，不要修改文件，也不要运行命令。
+```
+
+![Claude Code 面板已经收到回复，输入框下方标出了模型选择位置](figs/发送验证消息.png "发送消息验证课程模型连接")
+
+能够收到正常回复，并且界面没有出现认证失败、模型不存在或连接错误，才说明配置基本成功。若验证失败，依次检查：代理是否为“开”、当前供应商是否为 `Yatcc`、API 请求地址是否完整、API Key 是否输入正确，以及所选模型是否仍在可用列表中。
+
+课程容器也提供 Claude Code 命令行版本。需要使用 CLI 时，新开一个终端并运行：
+
+```bash
+claude
+```
+
+图形扩展和 CLI 是 Claude Code 的两种使用界面。本课程当前先使用扩展完成入门操作；CLI 的完整命令与参数可查阅 [Anthropic：Claude Code CLI reference](https://code.claude.com/docs/en/cli-reference)。
 
 ## 十一、常见错误认识
 
@@ -500,3 +575,8 @@ IDE 自动补全主要生成局部代码，对话式 AI 主要生成回答，编
 12. DeepSeek AI. [DeepSeek Harness Web UI Guide](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/index.md). 访问日期：2026-08-15。
 13. Roo Code. [Installing Roo Code](https://roocodeinc.github.io/Roo-Code/getting-started/installing/). 访问日期：2026-08-15。
 14. Roo Code. [Roo Code Documentation](https://roocodeinc.github.io/Roo-Code/). 访问日期：2026-08-15。
+15. Anthropic. [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code). Claude Code Documentation. 访问日期：2026-10-01。
+16. Anthropic. [Claude Code CLI reference](https://code.claude.com/docs/en/cli-reference). Claude Code Documentation. 访问日期：2026-10-01。
+17. CC Switch. [Add Provider](https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/en/2-providers/2.1-add.md). GitHub. 访问日期：2026-10-01。
+18. CC-Switch CLI. [README](https://github.com/SaladDay/cc-switch-cli/blob/main/README.md). GitHub. 访问日期：2026-10-01。
+19. OpenAI. [Chat Completions API reference](https://developers.openai.com/api/reference/cli/resources/chat). OpenAI Developers. 访问日期：2026-10-01。

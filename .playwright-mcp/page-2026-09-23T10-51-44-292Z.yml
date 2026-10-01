@@ -1,0 +1,16 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]: 项目规则与上下文
+    - generic [ref=e4]: 教学模拟项目
+  - main [ref=e5]:
+    - heading "本次任务的上下文包" [level=1] [ref=e6]
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - strong [ref=e9]: 任务材料
+        - text: 目标 证据 修改约束 验证方式
+        - strong [ref=e10]: 项目长期规则
+        - text: AGENTS.md
+      - generic [ref=e11]:
+        - generic [ref=e12]: context.md
+        - generic [ref=e13]: "# 当前任务上下文包 · 教学示例 目标：修复 10.005 被舍入为 10.00 的金额错误。 证据：checkout.py 调用 quantize_money；当前测试复现错误。 约束：不转换为 float；不改变支付 API 字段与状态码。 验证：先运行金额相关测试，再报告实际结果。"
+    - generic [ref=e14]: 本次错误现象与验证状态留在任务中，不写入长期规则。
