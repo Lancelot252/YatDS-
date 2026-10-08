@@ -515,6 +515,17 @@ claude
 
 图形扩展和 CLI 是 Claude Code 的两种使用界面。本课程当前先使用扩展完成入门操作；CLI 的完整命令与参数可查阅 [Anthropic：Claude Code CLI reference](https://code.claude.com/docs/en/cli-reference)。
 
+### 4.查看html版本实验内容的方法
+
+在终端中打开 `src/Pages` 目录，运行：
+
+```bash
+python3 -m http.server 8000
+```
+之后在浏览器中访问 `https://<你的容器id（就是浏览器网址那里的一长串乱码一直到8443那里）>/proxy/8000/`，即可查看实验内容的 HTML 版本。
+
+PS.之后实验中有关网络服务的内容都可以通过类似的方法来访问。
+
 ## 十一、常见错误认识
 
 ### 1. “会自然语言就一定会用好 Agent”
