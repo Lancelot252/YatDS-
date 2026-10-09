@@ -231,7 +231,7 @@ const chapters = Array.from({ length: 12 }, (_, index) => {
 });
 
 const payload = {
-  title: "YatOL 人机协作课程讲义",
+  title: "YatDS 人机协作课程讲义",
   generatedAt: new Date().toISOString(),
   chapters
 };

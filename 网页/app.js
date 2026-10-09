@@ -78,7 +78,7 @@
   }
 
   function renderOverview() {
-    document.title = "YatOL 人机协作课程讲义";
+    document.title = "YatDS 人机协作课程讲义";
     article.innerHTML = `
       <header class="overview-hero">
         <h1>人机协作课程讲义</h1>
@@ -112,7 +112,7 @@
     const previous = flatSections[flatIndex - 1];
     const next = flatSections[flatIndex + 1];
 
-    document.title = `${section.shortTitle}｜${chapter.title}｜YatOL`;
+    document.title = `${section.shortTitle}｜${chapter.title}｜YatDS`;
     article.innerHTML = `
       <header class="article-header">
         <div class="breadcrumb">${chapter.title} <span>/</span> ${section.shortTitle}</div>
