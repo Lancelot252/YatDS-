@@ -57,6 +57,16 @@ function tableCells(line) {
   return line.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(cell => inline(cell.trim()));
 }
 
+function openingFence(line) {
+  const match = line.match(/^(`{3,}|~{3,})([\w+-]*)\s*$/);
+  return match ? { marker: match[1][0], length: match[1].length, language: match[2] || "text" } : null;
+}
+
+function closesFence(line, fence) {
+  const match = line.match(/^(`{3,}|~{3,})\s*$/);
+  return Boolean(match && match[1][0] === fence.marker && match[1].length >= fence.length);
+}
+
 function markdownToHtml(markdown) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const output = [];
@@ -67,14 +77,13 @@ function markdownToHtml(markdown) {
     const line = lines[index];
     if (!line.trim()) { index += 1; continue; }
 
-    const fence = line.match(/^```([\w+-]*)\s*$/);
+    const fence = openingFence(line);
     if (fence) {
-      const language = fence[1] || "text";
       const code = [];
       index += 1;
-      while (index < lines.length && !/^```\s*$/.test(lines[index])) code.push(lines[index++]);
-      index += 1;
-      output.push(`<pre data-language="${escapeHtml(language)}"><code>${escapeHtml(code.join("\n"))}</code></pre>`);
+      while (index < lines.length && !closesFence(lines[index], fence)) code.push(lines[index++]);
+      if (index < lines.length) index += 1;
+      output.push(`<pre data-language="${escapeHtml(fence.language)}"><code>${escapeHtml(code.join("\n"))}</code></pre>`);
       continue;
     }
 
@@ -162,7 +171,7 @@ function markdownToHtml(markdown) {
     while (index < lines.length && lines[index].trim()) {
       const next = lines[index];
       if (
-        /^```/.test(next) || /^(#{3,6})\s+/.test(next) || /^>\s?/.test(next) ||
+        openingFence(next) || /^(#{3,6})\s+/.test(next) || /^>\s?/.test(next) ||
         /^\s*[-+*]\s+/.test(next) || /^\s*\d+[.)]\s+/.test(next) ||
         (index + 1 < lines.length && next.includes("|") && isTableDivider(lines[index + 1]))
       ) break;
@@ -184,7 +193,7 @@ function splitChapter(markdown, fileIndex) {
   const sections = [];
   let currentTitle = "";
   let currentLines = [];
-  let inFence = false;
+  let fence = null;
 
   function commit() {
     if (!currentTitle) return;
@@ -199,8 +208,12 @@ function splitChapter(markdown, fileIndex) {
   }
 
   for (const line of lines.slice(1)) {
-    if (/^```/.test(line)) inFence = !inFence;
-    if (!inFence && /^##\s+/.test(line)) {
+    if (fence) {
+      if (closesFence(line, fence)) fence = null;
+    } else {
+      fence = openingFence(line);
+    }
+    if (!fence && /^##\s+/.test(line)) {
       commit();
       currentTitle = line.replace(/^##\s+/, "").trim();
       currentLines = [];
