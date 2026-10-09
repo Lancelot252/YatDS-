@@ -424,6 +424,8 @@ DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]
 
 本课程以数据结构项目作为实践载体。栈、队列、链表等数据结构具有清楚的接口和边界条件，便于观察 Agent 如何阅读项目、修改代码和补充测试。
 
+课程项目仓库：[https://github.com/Lancelot252/yatds](https://github.com/Lancelot252/yatds)。
+
 实验内容位于远程容器所拉取的仓库中，无需单独拉取。
 
 ### 2. 基础环境
