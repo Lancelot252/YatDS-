@@ -428,7 +428,7 @@ DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]
 
 ### 2. 基础环境
 本课程提供远程容器访问作为实验环境，学习者无需在本机安装 Python、Git 或其他工具。
-远程容器位于 [https://ol.yatcc.arcsysu.cn/](https://ol.yatcc.arcsysu.cn/)，账号密码为……
+远程容器位于 [https://ol.yatcc.arcsysu.cn/](https://ol.yatcc.arcsysu.cn/)，初始账号密码为你的学号。
 
 登陆进入主界面之后，首先需要在**创建服务**中选择本课程容器并创建，之后在**我的服务**中即可看到容器并启动进入（具体操作指引位于主页面内）。
 
