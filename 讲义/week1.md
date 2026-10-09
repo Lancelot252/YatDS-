@@ -303,21 +303,23 @@ WorkBuddy 是腾讯推出的全场景职场 AI Agent 桌面工作台，并不是
 
 它的特点是把代码任务与文档、表格、演示文稿、数据分析和本地文件处理放进同一任务工作台，并支持同时管理多个任务。对于学习编码 Agent，应重点观察其代码开发模式怎样读取授权文件、执行步骤和展示结果，不要把办公或设计能力当作所有编码 Agent 都具备的共同功能。
 
-![腾讯 WorkBuddy 桌面界面，左侧管理任务，中间通过自然语言输入任务，右侧展示结果](https://www.workbuddy.cn/docs/static/quickstart-1.DGnw1yR0.png "腾讯 WorkBuddy 桌面界面")
+![腾讯 WorkBuddy 桌面界面，左侧管理任务，中间通过自然语言输入任务，右侧展示结果](figs/workbuddy.png "腾讯 WorkBuddy 桌面界面")
 
-图片来源：[腾讯 WorkBuddy 文档：快速开始](https://www.workbuddy.cn/docs/workbuddy/Quickstart)（访问日期：2026-08-15）。截图展示 WorkBuddy 的任务工作台；代码开发只是其多个任务模式之一。
+图片来源：[腾讯 WorkBuddy 文档：产品概览](https://www.workbuddy.cn/docs/workbuddy/Overview)（访问日期：2026-10-09）。截图展示 WorkBuddy 的任务工作台；代码开发只是其多个任务模式之一。
 
 ### 6. DeepSeek Harness
 
-DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]。它不是只提供固定界面的成品聊天工具，而是一套用于组合 Agent 能力的运行框架。官方用“一切皆插件”概括其设计：模型、工具、技能、会话、沙箱、存储、执行循环、调度和界面等能力都可以由插件提供，并在配置中进行组合。
+DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]，同时提供可直接使用的 Agent 界面和可扩展的运行框架。截至 2026 年 10 月 9 日，官方已提供 macOS（Apple 芯片）和 Windows（64 位）桌面端下载，也保留通过命令启动 Web UI 的方式；因此，认识这款产品时应同时关注桌面应用和开发者运行环境。
 
-目前官方提供 Web UI。用户选择工作区并配置模型后，Agent 可以读取和编辑文件、运行命令、委派任务并维护计划；需要批准的操作会依据当前权限策略请求确认。它的特点是开源、可组合，适合希望观察、研究或定制 Agent 运行方式的开发者。
+在编码场景中，它可以理解项目、修复问题、开发功能和运行测试。使用 Web UI 时，需要配置模型并添加、选中项目工作区，之后 Agent 才能读取和编辑工作区文件、运行命令、委派工作并维护计划；需要审批的操作按当前权限策略请求确认。桌面端和 Web UI 的入口、模型配置与授权方式应按各自界面确认，不能直接套用其他产品的规则。
 
-![DeepSeek Harness 插件设置界面，展示已安装插件、启用状态和不同 Agent 能力的组合方式](https://www.deepseek.com/harness/images/harness/feat-plugin.png "DeepSeek Harness 插件设置界面")
+它仍以“一切皆插件”为主要特点，基于 Cordis 架构将 Agent 能力组织成可以组合的插件。用户可以安装插件，也可以在“创造模式”中通过对话创建插件，扩展工具、技能和界面；开发者还可以查看执行轨迹，分析工具调用和任务执行过程。第一周只认识这些能力与产品形态，插件开发、权限控制和多 Agent 协作将在后续周次展开。
 
-图片来源：[DeepSeek：DeepSeek Harness 开发者预览版](https://www.deepseek.com/harness/)（访问日期：2026-08-15）。截图展示官方 Web UI 的插件设置页；界面与插件列表可能随版本更新。
+![DeepSeek Harness 官方插件管理界面，展示智能体团队、终端、Agent 循环、Subagent 和网页搜索等插件](figs/deepseek-harness.webp "DeepSeek Harness 插件管理界面")
 
-需要注意，DeepSeek Harness 当前处于 Developer Preview（开发者预览版）。官方说明核心插件和基础 API[^6] 仍会持续迭代，因此本节只介绍其产品定位和主要特点，不把当前命令、插件接口或功能列表当作长期稳定规则。
+图片来源：[DeepSeek：DeepSeek Harness](https://www.deepseek.com/harness/)（访问日期：2026-10-09）。截图展示当前官网使用的插件管理界面；图中的智能体团队和语音输入带有 Beta 标记，实际插件列表与状态可能随版本变化。
+
+需要注意，官网将当前产品标为“预览版”，开源仓库仍说明其处于 Developer Preview（开发者预览版），核心插件和基础 API[^6] 会持续迭代，并可能出现不兼容的变化。学习时应以所安装版本和当前官方文档为准，不把预览版界面、插件接口或功能列表当作长期稳定规则。
 
 [^6]: API 是让不同程序按照约定互相发送请求和返回结果的接口。
 
@@ -330,7 +332,7 @@ DeepSeek Harness（命令名 `dsh`）是 DeepSeek AI 开源的 Agent Harness[^5]
 | TRAE | 以 AI IDE 为主要形态，可在保留编辑器操作的 IDE Mode 与更自主执行任务的 SOLO Mode 之间切换。 |
 | GitHub Copilot | 覆盖 IDE、CLI、云端和桌面应用，与 GitHub 仓库、Issue、分支、合并请求和持续集成紧密结合。 |
 | WorkBuddy | 属于全场景桌面 Agent，代码开发与办公、设计和多种文件交付共用一个工作台。 |
-| DeepSeek Harness | 提供 Web UI 和可插拔 Agent 运行框架，通过插件组合模型、工具、权限与执行方式，便于研究和定制。 |
+| DeepSeek Harness | 提供桌面端、Web UI 和可插拔 Agent 运行框架，既可处理编码任务，也可通过插件扩展能力；当前仍为预览版。 |
 
 这些产品都可以参与开发任务，但入口、可见上下文、工具、权限和结果交付方式不同。判断一款工具是否适合当前任务，应先确认它在所用界面中能访问什么、能执行什么、怎样请求授权，以及用户怎样审查最终修改。
 
@@ -583,9 +585,9 @@ IDE 自动补全主要生成局部代码，对话式 AI 主要生成回答，编
 7. TRAE. [TRAE IDE](https://www.trae.ai/ide/). 访问日期：2026-08-16。
 8. GitHub. [GitHub Copilot features](https://docs.github.com/en/copilot/get-started/features). GitHub Docs. 访问日期：2026-08-15。
 9. GitHub. [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app). GitHub Docs. 访问日期：2026-08-15。
-10. Tencent. [WorkBuddy 快速开始](https://www.workbuddy.cn/docs/workbuddy/Quickstart). 访问日期：2026-08-15。
-11. DeepSeek AI. [DeepSeek Harness](https://www.deepseek.com/harness/). Developer Preview. 访问日期：2026-08-15。
-12. DeepSeek AI. [DeepSeek Harness Web UI Guide](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/index.md). 访问日期：2026-08-15。
+10. Tencent. [WorkBuddy 产品概览](https://www.workbuddy.cn/docs/workbuddy/Overview). 访问日期：2026-10-09。
+11. DeepSeek AI. [DeepSeek Harness](https://www.deepseek.com/harness/)、[官方开源仓库 README](https://github.com/deepseek-ai/deepseek-harness#readme). 预览版。访问日期：2026-10-09。
+12. DeepSeek AI. [使用 Web UI](https://deepseek-harness.github.io/deepseek-harness/guide/quickstart). 访问日期：2026-10-09。
 13. Roo Code. [Installing Roo Code](https://roocodeinc.github.io/Roo-Code/getting-started/installing/). 访问日期：2026-08-15。
 14. Roo Code. [Roo Code Documentation](https://roocodeinc.github.io/Roo-Code/). 访问日期：2026-08-15。
 15. Anthropic. [Use Claude Code in VS Code](https://code.claude.com/docs/en/vs-code). Claude Code Documentation. 访问日期：2026-10-01。
