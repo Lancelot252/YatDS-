@@ -527,7 +527,51 @@ claude
 
 图形扩展和 CLI 是 Claude Code 的两种使用界面。本课程当前先使用扩展完成入门操作；CLI 的完整命令与参数可查阅 [Anthropic：Claude Code CLI reference](https://code.claude.com/docs/en/cli-reference)。
 
-### 4.查看html版本实验内容的方法
+### 4.实验容器使用须知
+
+- 容器的使用时长为每人240h，超过时长后将无法继续使用。请合理安排实验时间，在完成每次实验后及时退出容器，避免占用时长。
+
+- 容器重新启动会导致cc-switch的配置清空，因此建议每次修改后将配置导出保存，重新启动后直接导入即可，不需要再次从头配置。
+
+#### 4.1 cc-switch 配置导出导入教程
+
+`cc-switch` 可以把当前供应商、模型映射和其他设置导出为 SQL[^7] 配置备份。容器重新启动前，建议先把配置导出；之后可直接导入备份，不必重新逐项填写。
+
+[^7]: SQL 配置备份是用数据库语句保存完整配置、供软件恢复使用的文件。
+
+##### 第一步：进入导出配置
+
+在 `cc-switch` 左侧菜单中选择 **配置**，再选择 **导出配置**，按 `Enter` 打开导出窗口。
+
+![cc-switch 的配置页面，导出配置选项已经被选中](figs/cc-switch配置导出.png "在 cc-switch 中选择导出配置")
+
+##### 第二步：确认导出路径
+
+导出窗口会显示配置文件的保存路径。可以直接保留默认值 `./config-export.sql`，也可以输入其他路径。路径中的 `./` 表示启动 `cc-switch` 时所在的当前文件夹；确认后按 `Enter` 导出。
+
+![cc-switch 的导出配置窗口，导出路径为当前文件夹中的 config-export.sql](figs/cc-switch导出路径.png "确认配置备份的导出路径")
+
+导出完成后，在左侧文件浏览器中确认出现 `config-export.sql`。如果没有看到，可以刷新文件列表，并检查导出时填写的路径。
+
+![课程项目的文件浏览器中已经出现 config-export.sql](figs/cc-switch导出结果.png "确认配置备份文件已经生成")
+
+导出的 SQL 文件可能包含供应商配置和 API Key，作用类似配置密码文件。不要把它提交到 Git、上传到公开网盘或发送给其他人。需要跨容器保存时，应下载到自己的安全位置。
+
+##### 第三步：导入配置
+
+需要恢复时，先把此前导出的 `.sql` 文件放入当前容器。在 `cc-switch` 中选择 **配置 → 导入配置**，输入该文件的完整路径或相对于当前文件夹的路径，例如：
+
+```text
+./config-export.sql
+```
+
+按 `Enter` 确认导入。导入会覆盖当前 `cc-switch` 配置；如果当前容器中已有需要保留的新配置，应先另行导出备份。导入完成后，检查供应商、API 请求地址和模型映射是否正确。
+
+##### 第四步：重新开启代理并验证
+
+导入配置不会代替代理启动操作。返回 **首页**，按 `P` 重新开启代理，确认右上角显示 **代理：开** 且供应商为 **Yatcc**。最后回到 Claude Code，发送一条只读验证消息；能够正常收到回复且没有认证或模型错误，才说明恢复成功。
+
+### 5.查看html版本实验内容的方法
 
 在终端中打开 `src/Pages` 目录，运行：
 
@@ -597,3 +641,5 @@ IDE 自动补全主要生成局部代码，对话式 AI 主要生成回答，编
 17. CC Switch. [Add Provider](https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/en/2-providers/2.1-add.md). GitHub. 访问日期：2026-10-01。
 18. CC-Switch CLI. [README](https://github.com/SaladDay/cc-switch-cli/blob/main/README.md). GitHub. 访问日期：2026-10-01。
 19. OpenAI. [Chat Completions API reference](https://developers.openai.com/api/reference/cli/resources/chat). OpenAI Developers. 访问日期：2026-10-01。
+20. CC-Switch CLI. [Configuration import and export](https://github.com/SaladDay/cc-switch-cli/blob/main/README.md). GitHub. 访问日期：2026-10-10。
+21. CC Switch. [配置文件说明与备份建议](https://github.com/farion1231/cc-switch/blob/main/docs/user-manual/zh/5-faq/5.1-config-files.md). GitHub. 访问日期：2026-10-10。
