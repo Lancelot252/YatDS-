@@ -95,6 +95,23 @@ Agent 无法确定目标文件，也可能自行创建新文件或改变已有�
 
 两条 Prompt 长度不同，原因在于任务需要的信息量不同。Prompt 的长度应服务于执行准确性。
 
+### 4. 过于简单的 Prompt 可能增加 Token 用量
+
+提示词过于简单、缺少目标和范围时，AI 可能自由发挥，自行补充设计、搜索更多文件或增加未要求的功能。如果结果偏离预期，还需要继续解释、修改和返工，整个任务的 Token[^13] 用量就可能增加。不能只看第一条 Prompt 写了多少字，还要看完成任务的整个过程。
+
+[^13]: Token 是模型处理文字和代码时使用的计量单位，不与字数一一对应。
+
+例如，只说“把页面美化一下”，Agent 可能重新设计整个页面。若只需要调整按钮，可以写：
+
+```text
+只调整 `web/stack.css` 中入栈和出栈按钮的配色与间距，
+让它们与页面现有风格一致；保留布局和功能，不修改其他文件。
+```
+
+**简单不等于含糊，详细也不等于冗长。** 目标明确的短 Prompt 仍然有效；补足会影响结果的范围、约束与完成条件，可以减少不必要的探索和返工。堆入无关背景同样会增加输入量，不能据此认为提示词越长越省 Token。
+
+Anthropic 的 [Manage costs effectively：Write specific prompts](https://code.claude.com/docs/en/costs#write-specific-prompts) 指出，模糊请求会让 Claude Code 广泛扫描，而具体请求能减少文件读取（访问日期：2026-10-14）。上面的自由发挥与返工说明是据此作出的使用提醒，不代表所有产品都会采取相同操作，也不保证每次补充提示词都降低用量。
+
 ## 二、Prompt 在编码 Agent 中的作用
 
 ### 1. Prompt 决定 Agent 如何理解任务
@@ -2565,3 +2582,4 @@ SVG 使用标签组织内容。最外层的 `svg` 包含绘图区域，里面依
 9. W3C. [SVG 2: Document Structure](https://www.w3.org/TR/SVG/struct.html). 访问日期：2026-10-14。
 10. W3C. [SVG 2: Coordinate Systems, Transformations and Units](https://www.w3.org/TR/SVG/coords.html). 访问日期：2026-10-14。
 11. W3C. [SVG 2: Basic Shapes](https://www.w3.org/TR/SVG/shapes.html). 访问日期：2026-10-14。
+12. Anthropic. [Manage costs effectively: Write specific prompts](https://code.claude.com/docs/en/costs#write-specific-prompts). Claude Code Documentation. 访问日期：2026-10-14。

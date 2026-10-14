@@ -352,6 +352,13 @@ Step-by-step Prompting 将 Agent 的可观察操作按顺序排列，适合需�
 
 如果目标文件、修改要求和完成标准已经清楚，就不必再加入无关角色或示例。
 
+教师同时提醒：过于简单、缺少关键信息的 Prompt 可能让 AI 自由发挥，例如扩大搜索范围、重新设计页面或增加未要求的功能；随后纠偏和返工又可能增加整个任务的 Token[^12] 用量。只说“把页面美化一下”，与“只调整两个按钮的配色和间距，保留布局与功能”，留给 Agent 的解释空间不同。
+
+[^12]: Token 是模型处理文字和代码时使用的计量单位，不与字数一一对应。
+
+讲解时强调：目标明确的短 Prompt 仍然有效，应该补足影响结果的信息；无关背景和重复要求也会增加输入量。具体用量取决于模型与实际执行过程，不能把“写得更长”当作节省用量的方法。Anthropic 的成本管理文档以 Claude Code 为例说明，模糊请求会引起广泛扫描，具体请求能减少文件读取；此处只作提示词设计提醒，不展开产品计费规则。
+
+
 ### 5. 检查相关性、具体性和一致性
 
 发送前检查三点：
@@ -561,6 +568,8 @@ Markdown | JSON | 表格 | 代码
 7. OpenAI. [Frontend prompt instructions](https://developers.openai.com/api/docs/guides/frontend-prompt). 访问日期：2026-10-14。
 8. Anthropic. [Common workflows: Work with images](https://code.claude.com/docs/en/common-workflows#work-with-images). 访问日期：2026-10-14。
 9. W3C. [SVG 2: Document Structure](https://www.w3.org/TR/SVG/struct.html)、[Coordinate Systems](https://www.w3.org/TR/SVG/coords.html)、[Basic Shapes](https://www.w3.org/TR/SVG/shapes.html). 访问日期：2026-10-14。
+
+10. Anthropic. [Manage costs effectively: Write specific prompts](https://code.claude.com/docs/en/costs#write-specific-prompts). Claude Code Documentation. 访问日期：2026-10-14。
 
 ## 十四、与后续课程的衔接
 
