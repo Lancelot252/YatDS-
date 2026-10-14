@@ -1,9 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const websiteDir = path.dirname(fileURLToPath(import.meta.url));
 const sourceDir = path.resolve(websiteDir, "../讲义");
+
+function contentHash(value) {
+  return createHash("sha256").update(value).digest("hex").slice(0, 12);
+}
 
 function escapeHtml(value) {
   return value
@@ -117,8 +122,10 @@ function markdownToHtml(markdown) {
         }
         const destinationPath = path.resolve(websiteDir, relativeSourcePath);
         fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
-        fs.copyFileSync(sourcePath, destinationPath);
-        outputSource = relativeSourcePath.split(path.sep).map(encodeURIComponent).join("/");
+        const imageData = fs.readFileSync(sourcePath);
+        fs.writeFileSync(destinationPath, imageData);
+        const encodedPath = relativeSourcePath.split(path.sep).map(encodeURIComponent).join("/");
+        outputSource = `${encodedPath}?v=${contentHash(imageData)}`;
       }
       output.push(`<figure class="course-figure"><img src="${escapeHtml(outputSource)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" />${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ""}</figure>`);
       index += 1;
@@ -237,6 +244,19 @@ const payload = {
 };
 
 const destination = path.join(websiteDir, "content.js");
-fs.writeFileSync(destination, `window.LECTURE_DATA = ${JSON.stringify(payload)};\n`);
+const generatedContent = `window.LECTURE_DATA = ${JSON.stringify(payload)};\n`;
+fs.writeFileSync(destination, generatedContent);
+
+const indexPath = path.join(websiteDir, "index.html");
+const indexHtml = fs.readFileSync(indexPath, "utf8");
+const versionedIndexHtml = indexHtml.replace(
+  /<script src="\.\/content\.js(?:\?v=[^"]*)?"><\/script>/,
+  `<script src="./content.js?v=${contentHash(generatedContent)}"></script>`
+);
+if (versionedIndexHtml === indexHtml && !indexHtml.includes('<script src="./content.js?v=')) {
+  throw new Error("Unable to find the content.js script tag in index.html");
+}
+fs.writeFileSync(indexPath, versionedIndexHtml);
+
 console.log(`Generated ${destination}`);
 console.log(`${chapters.length} chapters, ${chapters.reduce((sum, chapter) => sum + chapter.sections.length, 0)} content pages`);
